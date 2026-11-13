@@ -25,6 +25,7 @@ livecontainer://source?url=https%3A%2F%2Fraw.githubusercontent.com%2FYakult00%2F
 | 应用 | 版本 | 上游 |
 |---|---|---|
 | GestaltX | 1.0.7 | [huamidev/GestaltX](https://github.com/huamidev/GestaltX) |
+| WQ Files | 0.9.5 | [kolbicz/WQFiles](https://github.com/kolbicz/WQFiles) |
 
 ## 加新应用
 
