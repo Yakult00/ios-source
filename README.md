@@ -26,6 +26,8 @@ livecontainer://source?url=https%3A%2F%2Fraw.githubusercontent.com%2FYakult00%2F
 |---|---|---|
 | GestaltX | 1.0.7 | [huamidev/GestaltX](https://github.com/huamidev/GestaltX) |
 | WQ Files | 0.9.5 | [kolbicz/WQFiles](https://github.com/kolbicz/WQFiles) |
+| AirCard | 1.3.2 | [Mak5er/AirCard-iOS](https://github.com/Mak5er/AirCard-iOS) |
+| iPadn | 2.0.0 | [mengangs/ipadn](https://github.com/mengangs/ipadn) |
 
 ## 加新应用
 

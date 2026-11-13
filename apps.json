@@ -7,6 +7,55 @@
   "website": "https://github.com/Yakult00/ios-source",
   "apps": [
     {
+      "name": "AirCard-iOS",
+      "bundleIdentifier": "com.mak5er.aircard",
+      "developerName": "Mak5er",
+      "subtitle": "Apple Wallet 卡片与锁屏主题",
+      "localizedDescription": "Apple Wallet 卡片样式与锁屏密码主题工具。\n\n开源协议：MIT · 项目主页：https://github.com/Mak5er/AirCard-iOS",
+      "iconURL": "https://cdn.jsdelivr.net/gh/Mak5er/AirCard-iOS@v1.3.2/ios-app/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+      "tintColor": "#0A84FF",
+      "category": "utilities",
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "version": "1.3.2",
+      "versionDate": "2026-10-04",
+      "versionDescription": "## What's Changed in v1.3.2 🚀\n\nThis update brings full feature parity with AirCard macOS v1.2.6, restores robust card discovery across all iOS versions, introduces automatic bank/network recognition with custom card nicknames, delivers an ultra-fast tunnel cache (0.02s connections), and completely resolves wallpaper flashing for Collections and Mercury wallpapers.\n\n### 💳 Wallet Card Discovery & Bank Identification\n• **Universal Wallet Log Parser**: Ported the proven `WalletScanParser` from AirCard macOS. Captures cards from `Dashboard loading (...): for SOO+`, `passIDs[InSession]`, `passIDs[global]`, and modern JSON NFC activations (`\"identifier\": \"HEX\"`).\n• **Automatic Bank & Network Detection**: Recognizes Visa, Mastercard, American Express, UnionPay, Discover, and JCB via applet AIDs during selection.\n• **Card Nicknames (Rename)**: Added a direct **Rename** button (✏️) so you can give your cards friendly names like *\"Monobank\"*, *\"Salary Card\"*, or *\"Revolut\"*, safely persisted in app settings.\n• **28-Character Fallback Token Matcher**: Restores dependable card discovery on devices where standard log patterns are redacted.\n\n### ⚡ Ultra-Fast Tunnel Routing (from 10s to 0.02s!)\n• **Working Route Caching**: `rust-core` now caches the active RSD connection route (`LAST_WORKING_ROUTE`), eliminating repeated port and interface scanning.\n• **RSD-First Priority**: Connects directly via RemoteXPC on port 49152, bypassing slow Lockdown retries and broken pipes on iOS 18+.\n• **Eliminated Loopback Policy Drops**: Removed local loopback attempts that caused `policy drop` control channel errors.\n\n### 🖼 Wallpapers (.tendies) — Collections & Mercury Fixes\n• **Dual Injection on iOS 18+**: Wallpapers are now injected into both their primary bundle (`com.apple.WallpaperKit.CollectionsPoster` or `com.apple.MercuryPoster`) and the modern iOS 18+ application container (`com.apple.Posters.CollectionsPosterApp` / `com.apple.Posters.MercuryPosterApp`).\n• **Metadata Synchronization**: Fix",
+      "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3.2/AirCard-iOS.ipa",
+      "size": 4638147,
+      "minOSVersion": "18.0",
+      "versions": [
+        {
+          "version": "1.3.2",
+          "date": "2026-10-04",
+          "publishedAt": "2026-10-04T12:22:53Z",
+          "buildVersion": "1.3.2",
+          "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3.2/AirCard-iOS.ipa",
+          "size": 4638147,
+          "minOSVersion": "18.0",
+          "localizedDescription": "## What's Changed in v1.3.2 🚀\n\nThis update brings full feature parity with AirCard macOS v1.2.6, restores robust card discovery across all iOS versions, introduces automatic bank/network recognition with custom card nicknames, delivers an ultra-fast tunnel cache (0.02s connections), and completely resolves wallpaper flashing for Collections and Mercury wallpapers.\n\n### 💳 Wallet Card Discovery & Bank Identification\n• **Universal Wallet Log Parser**: Ported the proven `WalletScanParser` from AirCard macOS. Captures cards from `Dashboard loading (...): for SOO+`, `passIDs[InSession]`, `passIDs[global]`, and modern JSON NFC activations (`\"identifier\": \"HEX\"`).\n• **Automatic Bank & Network Detection**: Recognizes Visa, Mastercard, American Express, UnionPay, Discover, and JCB via applet AIDs during selection.\n• **Card Nicknames (Rename)**: Added a direct **Rename** button (✏️) so you can give your cards friendly names like *\"Monobank\"*, *\"Salary Card\"*, or *\"Revolut\"*, safely persisted in app settings.\n• **28-Character Fallback Token Matcher**: Restores dependable card discovery on devices where standard log patterns are redacted.\n\n### ⚡ Ultra-Fast Tunnel Routing (from 10s to 0.02s!)\n• **Working Route Caching**: `rust-core` now caches the active RSD connection route (`LAST_WORKING_ROUTE`), eliminating repeated port and interface scanning.\n• **RSD-First Priority**: Connects directly via RemoteXPC on port 49152, bypassing slow Lockdown retries and broken pipes on iOS 18+.\n• **Eliminated Loopback Policy Drops**: Removed local loopback attempts that caused `policy drop` control channel errors.\n\n### 🖼 Wallpapers (.tendies) — Collections & Mercury Fixes\n• **Dual Injection on iOS 18+**: Wallpapers are now injected into both their primary bundle (`com.apple.WallpaperKit.CollectionsPoster` or `com.apple.MercuryPoster`) and the modern iOS 18+ application container (`com.apple.Posters.CollectionsPosterApp` / `com.apple.Posters.MercuryPosterApp`).\n• **Metadata Synchronization**: Fix"
+        }
+      ],
+      "releaseChannels": [
+        {
+          "track": "stable",
+          "releases": [
+            {
+              "version": "1.3.2",
+              "date": "2026-10-04",
+              "publishedAt": "2026-10-04T12:22:53Z",
+              "buildVersion": "1.3.2",
+              "downloadURL": "https://github.com/Mak5er/AirCard-iOS/releases/download/v1.3.2/AirCard-iOS.ipa",
+              "size": 4638147,
+              "minOSVersion": "18.0",
+              "localizedDescription": "## What's Changed in v1.3.2 🚀\n\nThis update brings full feature parity with AirCard macOS v1.2.6, restores robust card discovery across all iOS versions, introduces automatic bank/network recognition with custom card nicknames, delivers an ultra-fast tunnel cache (0.02s connections), and completely resolves wallpaper flashing for Collections and Mercury wallpapers.\n\n### 💳 Wallet Card Discovery & Bank Identification\n• **Universal Wallet Log Parser**: Ported the proven `WalletScanParser` from AirCard macOS. Captures cards from `Dashboard loading (...): for SOO+`, `passIDs[InSession]`, `passIDs[global]`, and modern JSON NFC activations (`\"identifier\": \"HEX\"`).\n• **Automatic Bank & Network Detection**: Recognizes Visa, Mastercard, American Express, UnionPay, Discover, and JCB via applet AIDs during selection.\n• **Card Nicknames (Rename)**: Added a direct **Rename** button (✏️) so you can give your cards friendly names like *\"Monobank\"*, *\"Salary Card\"*, or *\"Revolut\"*, safely persisted in app settings.\n• **28-Character Fallback Token Matcher**: Restores dependable card discovery on devices where standard log patterns are redacted.\n\n### ⚡ Ultra-Fast Tunnel Routing (from 10s to 0.02s!)\n• **Working Route Caching**: `rust-core` now caches the active RSD connection route (`LAST_WORKING_ROUTE`), eliminating repeated port and interface scanning.\n• **RSD-First Priority**: Connects directly via RemoteXPC on port 49152, bypassing slow Lockdown retries and broken pipes on iOS 18+.\n• **Eliminated Loopback Policy Drops**: Removed local loopback attempts that caused `policy drop` control channel errors.\n\n### 🖼 Wallpapers (.tendies) — Collections & Mercury Fixes\n• **Dual Injection on iOS 18+**: Wallpapers are now injected into both their primary bundle (`com.apple.WallpaperKit.CollectionsPoster` or `com.apple.MercuryPoster`) and the modern iOS 18+ application container (`com.apple.Posters.CollectionsPosterApp` / `com.apple.Posters.MercuryPosterApp`).\n• **Metadata Synchronization**: Fix"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "GestaltX",
       "bundleIdentifier": "com.huami.gestultx",
       "developerName": "huamidev",
@@ -50,6 +99,55 @@
               "size": 3563948,
               "minOSVersion": "26.0",
               "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "iPadn",
+      "bundleIdentifier": "app.local.iPadn",
+      "developerName": "mengangs",
+      "subtitle": "下载安装你拥有的 App",
+      "localizedDescription": "在 iPhone 和 iPad 上搜索、下载、安装你拥有的 App：历史版本、已下架应用、多地区比价与原生安装。安装包未签名，请用自己的工具签名后安装。\n\n项目主页：https://github.com/mengangs/ipadn",
+      "iconURL": "https://cdn.jsdelivr.net/gh/mengangs/ipadn@main/docs/images/icon.png",
+      "tintColor": "#0A84FF",
+      "category": "utilities",
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "version": "2.0.0",
+      "versionDate": "2026-11-12",
+      "versionDescription": "## iPadn 2.0.0\n\niPadn 2.0 是一次大更新：新增发现页、用户评论、翻译、应用锁、本机应用、Wi‑Fi 传输、灵动岛下载进度、小组件和快捷指令，原生安装可以阻止 App Store 更新，并开始支持 iOS / iPadOS 16。安装包未签名，请用自己的工具签名后安装。\n\n**两个安装包**\n\n- `iPadn-2.0.0-unsigned.ipa`：标准版，包含实时活动（灵动岛、锁屏）和小组件，签名时需要 2 个 App ID。\n- `iPadn-2.0.0-lite-unsigned.ipa`：精简版，不含扩展，只需 1 个 App ID，适合 App ID 数量有限的签名方式。其他功能相同。\n- SideStore、AltStore、Feather 等签名工具可以添加源 `https://raw.githubusercontent.com/mengangs/ipadn/main/altstore-source.json`，在工具里直接安装和更新。\n\n**发现与应用详情**\n\n- 搜索页新增「发现」：免费榜、付费榜、畅销榜，可切换地区并按分类筛选。\n- 详情页新增「评论」，可查看各地区最近的用户评论并按星级筛选。\n- 简介和更新说明不是你的语言时，可以用系统翻译替换为译文（iOS 17.4 及更新版本）。\n- 版本历史默认显示最近 5 个版本。\n\n**下载与安装**\n\n- 锁屏和灵动岛显示下载进度（可在设置中关闭）。\n- 新增「仅使用 Wi‑Fi 下载」和「下载完成后自动安装」。\n- 下载页可以「全部更新」，编辑模式改为紧凑列表并支持全选。\n- 任务详情新增「安装包信息」：权限、扩展、语言、URL Scheme、后台模式等。\n- 原生安装新增「阻止 App Store 更新」：App Store 会把应用视为最新版本，不再提示或自动更新；关闭后再安装一次即可恢复（#46）。\n- 新增「账号 › 本机应用」：列出手机上已装的应用，对比 App Store 版本并一键全部更新（需要原生安装的配对）。\n- 新增「账号 › Wi‑Fi 传输」：在同一 Wi‑Fi 的电脑浏览器中下载已完成的安装包，只在页面打开时运行，地址带随机密钥。\n- 在 LiveContainer 中运行时，会提示打开 LiveContainer 的「修复文件导入」，之后才能导入导出文件和一键安装（#44）。\n\n**关注与价格**\n\n- 关注的付费应用可以设置目标价，降到目标价才提醒。\n\n**安全与快捷操作**\n\n- 新增应用锁：面容 ID、触控 ID 或密码，可设置离开多久后需要验证，多任务界面中也会隐藏内容。\n- 新增主屏幕和锁屏小组件：快速打开搜索、下载、已购和更新检查。\n- 新增快捷指令：下载应用、检查更新、下载全部更新、获取下载进度、暂停或继续全部下载、关注应用。\n\n**专业模式**\n\n- 可以对比同一应用的两个已下载版本：版本、权限、扩展、框架等变化。\n\n**设置**\n\n- 设置首页改为分类入口；新增「备份与维护」导出、导入设置和关注列表（不含账号和安装包）。\n- 关闭「新版本提醒」后，下载页也不再显示更新提示。\n\n**系统支持与稳定性**\n\n- 支持 iOS / iPadOS 16 及更新版本（感谢 @tageniu）。\n- 修复部分安装包（如网易云音乐）的图标导致 iPadn 启动后崩溃。\n- 切换标签页更流畅：不再每次重建所有页面（#41）。\n\n**English**\n\niPadn 2.0 adds Discover (top charts by region and category), customer reviews, system translation of descriptions and release notes, App Lock, Apps on This Device, Wi‑Fi transfer to a computer, download progress on the Lock Screen and in the Dynamic Island, widgets and Shortcuts actions. Downloads can wait for Wi‑Fi and install automatically when finished; native installation can block App Store updates for an app. Package info shows what a package declares, and Pro mode compares two downloaded versions. Followed paid apps can ha",
+      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.0.0/iPadn-2.0.0-unsigned.ipa",
+      "size": 48201588,
+      "minOSVersion": "16.0",
+      "versions": [
+        {
+          "version": "2.0.0",
+          "date": "2026-11-12",
+          "publishedAt": "2026-11-12T10:41:39Z",
+          "buildVersion": "28",
+          "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.0.0/iPadn-2.0.0-unsigned.ipa",
+          "size": 48201588,
+          "minOSVersion": "16.0",
+          "localizedDescription": "## iPadn 2.0.0\n\niPadn 2.0 是一次大更新：新增发现页、用户评论、翻译、应用锁、本机应用、Wi‑Fi 传输、灵动岛下载进度、小组件和快捷指令，原生安装可以阻止 App Store 更新，并开始支持 iOS / iPadOS 16。安装包未签名，请用自己的工具签名后安装。\n\n**两个安装包**\n\n- `iPadn-2.0.0-unsigned.ipa`：标准版，包含实时活动（灵动岛、锁屏）和小组件，签名时需要 2 个 App ID。\n- `iPadn-2.0.0-lite-unsigned.ipa`：精简版，不含扩展，只需 1 个 App ID，适合 App ID 数量有限的签名方式。其他功能相同。\n- SideStore、AltStore、Feather 等签名工具可以添加源 `https://raw.githubusercontent.com/mengangs/ipadn/main/altstore-source.json`，在工具里直接安装和更新。\n\n**发现与应用详情**\n\n- 搜索页新增「发现」：免费榜、付费榜、畅销榜，可切换地区并按分类筛选。\n- 详情页新增「评论」，可查看各地区最近的用户评论并按星级筛选。\n- 简介和更新说明不是你的语言时，可以用系统翻译替换为译文（iOS 17.4 及更新版本）。\n- 版本历史默认显示最近 5 个版本。\n\n**下载与安装**\n\n- 锁屏和灵动岛显示下载进度（可在设置中关闭）。\n- 新增「仅使用 Wi‑Fi 下载」和「下载完成后自动安装」。\n- 下载页可以「全部更新」，编辑模式改为紧凑列表并支持全选。\n- 任务详情新增「安装包信息」：权限、扩展、语言、URL Scheme、后台模式等。\n- 原生安装新增「阻止 App Store 更新」：App Store 会把应用视为最新版本，不再提示或自动更新；关闭后再安装一次即可恢复（#46）。\n- 新增「账号 › 本机应用」：列出手机上已装的应用，对比 App Store 版本并一键全部更新（需要原生安装的配对）。\n- 新增「账号 › Wi‑Fi 传输」：在同一 Wi‑Fi 的电脑浏览器中下载已完成的安装包，只在页面打开时运行，地址带随机密钥。\n- 在 LiveContainer 中运行时，会提示打开 LiveContainer 的「修复文件导入」，之后才能导入导出文件和一键安装（#44）。\n\n**关注与价格**\n\n- 关注的付费应用可以设置目标价，降到目标价才提醒。\n\n**安全与快捷操作**\n\n- 新增应用锁：面容 ID、触控 ID 或密码，可设置离开多久后需要验证，多任务界面中也会隐藏内容。\n- 新增主屏幕和锁屏小组件：快速打开搜索、下载、已购和更新检查。\n- 新增快捷指令：下载应用、检查更新、下载全部更新、获取下载进度、暂停或继续全部下载、关注应用。\n\n**专业模式**\n\n- 可以对比同一应用的两个已下载版本：版本、权限、扩展、框架等变化。\n\n**设置**\n\n- 设置首页改为分类入口；新增「备份与维护」导出、导入设置和关注列表（不含账号和安装包）。\n- 关闭「新版本提醒」后，下载页也不再显示更新提示。\n\n**系统支持与稳定性**\n\n- 支持 iOS / iPadOS 16 及更新版本（感谢 @tageniu）。\n- 修复部分安装包（如网易云音乐）的图标导致 iPadn 启动后崩溃。\n- 切换标签页更流畅：不再每次重建所有页面（#41）。\n\n**English**\n\niPadn 2.0 adds Discover (top charts by region and category), customer reviews, system translation of descriptions and release notes, App Lock, Apps on This Device, Wi‑Fi transfer to a computer, download progress on the Lock Screen and in the Dynamic Island, widgets and Shortcuts actions. Downloads can wait for Wi‑Fi and install automatically when finished; native installation can block App Store updates for an app. Package info shows what a package declares, and Pro mode compares two downloaded versions. Followed paid apps can ha"
+        }
+      ],
+      "releaseChannels": [
+        {
+          "track": "stable",
+          "releases": [
+            {
+              "version": "2.0.0",
+              "date": "2026-11-12",
+              "publishedAt": "2026-11-12T10:41:39Z",
+              "buildVersion": "28",
+              "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.0.0/iPadn-2.0.0-unsigned.ipa",
+              "size": 48201588,
+              "minOSVersion": "16.0",
+              "localizedDescription": "## iPadn 2.0.0\n\niPadn 2.0 是一次大更新：新增发现页、用户评论、翻译、应用锁、本机应用、Wi‑Fi 传输、灵动岛下载进度、小组件和快捷指令，原生安装可以阻止 App Store 更新，并开始支持 iOS / iPadOS 16。安装包未签名，请用自己的工具签名后安装。\n\n**两个安装包**\n\n- `iPadn-2.0.0-unsigned.ipa`：标准版，包含实时活动（灵动岛、锁屏）和小组件，签名时需要 2 个 App ID。\n- `iPadn-2.0.0-lite-unsigned.ipa`：精简版，不含扩展，只需 1 个 App ID，适合 App ID 数量有限的签名方式。其他功能相同。\n- SideStore、AltStore、Feather 等签名工具可以添加源 `https://raw.githubusercontent.com/mengangs/ipadn/main/altstore-source.json`，在工具里直接安装和更新。\n\n**发现与应用详情**\n\n- 搜索页新增「发现」：免费榜、付费榜、畅销榜，可切换地区并按分类筛选。\n- 详情页新增「评论」，可查看各地区最近的用户评论并按星级筛选。\n- 简介和更新说明不是你的语言时，可以用系统翻译替换为译文（iOS 17.4 及更新版本）。\n- 版本历史默认显示最近 5 个版本。\n\n**下载与安装**\n\n- 锁屏和灵动岛显示下载进度（可在设置中关闭）。\n- 新增「仅使用 Wi‑Fi 下载」和「下载完成后自动安装」。\n- 下载页可以「全部更新」，编辑模式改为紧凑列表并支持全选。\n- 任务详情新增「安装包信息」：权限、扩展、语言、URL Scheme、后台模式等。\n- 原生安装新增「阻止 App Store 更新」：App Store 会把应用视为最新版本，不再提示或自动更新；关闭后再安装一次即可恢复（#46）。\n- 新增「账号 › 本机应用」：列出手机上已装的应用，对比 App Store 版本并一键全部更新（需要原生安装的配对）。\n- 新增「账号 › Wi‑Fi 传输」：在同一 Wi‑Fi 的电脑浏览器中下载已完成的安装包，只在页面打开时运行，地址带随机密钥。\n- 在 LiveContainer 中运行时，会提示打开 LiveContainer 的「修复文件导入」，之后才能导入导出文件和一键安装（#44）。\n\n**关注与价格**\n\n- 关注的付费应用可以设置目标价，降到目标价才提醒。\n\n**安全与快捷操作**\n\n- 新增应用锁：面容 ID、触控 ID 或密码，可设置离开多久后需要验证，多任务界面中也会隐藏内容。\n- 新增主屏幕和锁屏小组件：快速打开搜索、下载、已购和更新检查。\n- 新增快捷指令：下载应用、检查更新、下载全部更新、获取下载进度、暂停或继续全部下载、关注应用。\n\n**专业模式**\n\n- 可以对比同一应用的两个已下载版本：版本、权限、扩展、框架等变化。\n\n**设置**\n\n- 设置首页改为分类入口；新增「备份与维护」导出、导入设置和关注列表（不含账号和安装包）。\n- 关闭「新版本提醒」后，下载页也不再显示更新提示。\n\n**系统支持与稳定性**\n\n- 支持 iOS / iPadOS 16 及更新版本（感谢 @tageniu）。\n- 修复部分安装包（如网易云音乐）的图标导致 iPadn 启动后崩溃。\n- 切换标签页更流畅：不再每次重建所有页面（#41）。\n\n**English**\n\niPadn 2.0 adds Discover (top charts by region and category), customer reviews, system translation of descriptions and release notes, App Lock, Apps on This Device, Wi‑Fi transfer to a computer, download progress on the Lock Screen and in the Dynamic Island, widgets and Shortcuts actions. Downloads can wait for Wi‑Fi and install automatically when finished; native installation can block App Store updates for an app. Package info shows what a package declares, and Pro mode compares two downloaded versions. Followed paid apps can ha"
             }
           ]
         }

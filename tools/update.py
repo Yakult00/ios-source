@@ -58,8 +58,14 @@ def build_app(cfg):
     rel = gh(f"/repos/{owner_repo}/releases/latest")
     ipa_assets = [a for a in rel.get("assets", [])
                   if a["name"].lower().endswith(".ipa")]
+    include = cfg.get("asset_include", "")
+    exclude = cfg.get("asset_exclude", "")
+    if include:
+        ipa_assets = [a for a in ipa_assets if include in a["name"]]
+    if exclude:
+        ipa_assets = [a for a in ipa_assets if exclude not in a["name"]]
     if not ipa_assets:
-        raise RuntimeError(f"{owner_repo} 的最新 Release 里没有 .ipa")
+        raise RuntimeError(f"{owner_repo} 的最新 Release 里没有符合条件的 .ipa")
     asset = ipa_assets[0]
     print(f"   最新版 {rel['tag_name']}，{asset['name']} ({asset['size']} bytes)")
     info = ipa_info(asset["browser_download_url"])
