@@ -1,0 +1,59 @@
+{
+  "name": "养乐多的源",
+  "identifier": "dev.yakult00.source",
+  "subtitle": "自己收录的 iOS 应用",
+  "description": "自用的 AltStore / SideStore / LiveContainer 软件源，收录需要的开源 iOS 应用，跟随上游 GitHub Release 更新。",
+  "iconURL": "https://github.com/Yakult00.png",
+  "website": "https://github.com/Yakult00/ios-source",
+  "apps": [
+    {
+      "name": "GestaltX",
+      "bundleIdentifier": "com.huami.gestultx",
+      "developerName": "huamidev",
+      "subtitle": "MobileGestalt 编辑器",
+      "localizedDescription": "MobileGestalt 编辑器，可调整区域码、设备预设、备份配置。需要 iOS 26.0 及以上；安装包来自上游 GitHub Release。\n\n开源协议：GPL-3.0 · 项目主页：https://github.com/huamidev/GestaltX",
+      "iconURL": "https://cdn.jsdelivr.net/gh/huamidev/GestaltX@v1.0.7/GestaltX/Assets.xcassets/AppIcon.appiconset/AppIcon.png",
+      "tintColor": "#0A84FF",
+      "category": "utilities",
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "version": "1.0.7",
+      "versionDate": "2026-11-12",
+      "versionDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again.",
+      "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
+      "size": 3563948,
+      "minOSVersion": "26.0",
+      "versions": [
+        {
+          "version": "1.0.7",
+          "date": "2026-11-12",
+          "publishedAt": "2026-11-12T17:14:29Z",
+          "buildVersion": "11130112",
+          "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
+          "size": 3563948,
+          "minOSVersion": "26.0",
+          "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again."
+        }
+      ],
+      "releaseChannels": [
+        {
+          "track": "stable",
+          "releases": [
+            {
+              "version": "1.0.7",
+              "date": "2026-11-12",
+              "publishedAt": "2026-11-12T17:14:29Z",
+              "buildVersion": "11130112",
+              "downloadURL": "https://github.com/huamidev/GestaltX/releases/download/v1.0.7/GestaltX_1.0.7.ipa",
+              "size": 3563948,
+              "minOSVersion": "26.0",
+              "localizedDescription": "English | [简体中文](https://github.com/huamidev/GestaltX/blob/v1.0.7/CHANGELOG_ZH-CN.md)\r\n\r\nBuild `11130112`.\r\n\r\n### Fixed\r\n\r\n- Fix container discovery on iOS 27.3 so wallpaper and App Launch Images can locate their containers again."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
