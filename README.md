@@ -9,16 +9,22 @@
 **SideStore / AltStore**：`Sources（源）` → 右上角 `+` → 粘贴同一地址。
 
 ```
+https://cdn.jsdelivr.net/gh/Yakult00/ios-source@main/apps.json
+```
+
+备用地址（GitHub 直链，大陆可能慢或打不开）：
+
+```
 https://raw.githubusercontent.com/Yakult00/ios-source/main/apps.json
 ```
 
 也可以用一键链接（在手机上点开）：
 
 ```
-livecontainer://source?url=https%3A%2F%2Fraw.githubusercontent.com%2FYakult00%2Fios-source%2Fmain%2Fapps.json
+livecontainer://source?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FYakult00%2Fios-source%40main%2Fapps.json
 ```
 
-> 注意：`raw.githubusercontent.com` 在大陆有时很慢或打不开。如果加不上，可以把 `apps.json` 部署到国内能访问的地方（比如自己的服务器、cnb.cool），再把地址换成那个。
+> 注意：`raw.githubusercontent.com` 在大陆有时很慢或打不开，LiveContainer 刷不回来时会一直显示旧内容，所以主用 jsDelivr 地址。更新源文件后如果 jsDelivr 还是旧内容，等一会儿再刷新，或跑 `tools/update.py`（它最后会清一次 jsDelivr 缓存）。
 
 ## 已收录
 

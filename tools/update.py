@@ -125,6 +125,16 @@ def main():
     }
     OUT_FILE.write_text(json.dumps(source, ensure_ascii=False, indent=2) + "\n")
     print(f"\n已写入 {OUT_FILE}，共 {len(apps)} 个应用")
+    # 清一下 jsDelivr 的缓存，让手机上能尽快刷到新内容（失败也不影响）
+    try:
+        req = urllib.request.Request(
+            "https://purge.jsdelivr.net/gh/Yakult00/ios-source@main/apps.json",
+            headers={"User-Agent": "ios-source-updater"},
+        )
+        with urllib.request.urlopen(req, timeout=30) as r:
+            print("jsDelivr 缓存已清：", r.status)
+    except Exception as e:
+        print("jsDelivr 清缓存失败（可忽略）：", e)
 
 
 if __name__ == "__main__":
