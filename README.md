@@ -9,10 +9,16 @@
 **SideStore / AltStore**：`Sources（源）` → 右上角 `+` → 粘贴同一地址。
 
 ```
+https://github.com/Yakult00/ios-source/releases/download/latest/apps.json
+```
+
+备用地址（jsDelivr，大陆快）：
+
+```
 https://cdn.jsdelivr.net/gh/Yakult00/ios-source@main/apps.json
 ```
 
-备用地址（GitHub 直链，大陆可能慢或打不开）：
+另一备用地址（GitHub 直链，大陆可能慢或打不开）：
 
 ```
 https://raw.githubusercontent.com/Yakult00/ios-source/main/apps.json
@@ -21,19 +27,19 @@ https://raw.githubusercontent.com/Yakult00/ios-source/main/apps.json
 也可以用一键链接（在手机上点开）：
 
 ```
-livecontainer://source?url=https%3A%2F%2Fcdn.jsdelivr.net%2Fgh%2FYakult00%2Fios-source%40main%2Fapps.json
+livecontainer://source?url=https%3A%2F%2Fgithub.com%2FYakult00%2Fios-source%2Freleases%2Fdownload%2Flatest%2Fapps.json
 ```
 
-> 注意：`raw.githubusercontent.com` 在大陆有时很慢或打不开，LiveContainer 刷不回来时会一直显示旧内容，所以主用 jsDelivr 地址。更新源文件后如果 jsDelivr 还是旧内容，等一会儿再刷新，或跑 `tools/update.py`（它最后会清一次 jsDelivr 缓存）。
+> 注意：`raw.githubusercontent.com` 在大陆有时很慢或打不开，LiveContainer 刷不回来时会一直显示旧内容，所以主用 Release 地址。工作流每 15 分钟自动更新，推上去之后会清一次 jsDelivr 缓存；如果某个地址刷出来还是旧内容，换另一个地址试试。
 
 ## 已收录
 
 | 应用 | 版本 | 上游 |
 |---|---|---|
-| GestaltX | 1.0.7 | [huamidev/GestaltX](https://github.com/huamidev/GestaltX) |
-| WQ Files | 0.9.5 | [kolbicz/WQFiles](https://github.com/kolbicz/WQFiles) |
+| GestaltX | 1.1.1 | [huamidev/GestaltX](https://github.com/huamidev/GestaltX) |
+| WQ Files | 0.9.6 | [kolbicz/WQFiles](https://github.com/kolbicz/WQFiles) |
 | AirCard | 1.3.2 | [Mak5er/AirCard-iOS](https://github.com/Mak5er/AirCard-iOS) |
-| iPadn | 2.0.0 | [mengangs/ipadn](https://github.com/mengangs/ipadn) |
+| iPadn | 2.1.1 | [mengangs/ipadn](https://github.com/mengangs/ipadn) |
 
 ## 加新应用
 
