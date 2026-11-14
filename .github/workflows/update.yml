@@ -1,7 +1,7 @@
 name: Update source
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '7,22,37,52 * * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -16,9 +16,39 @@ jobs:
       - name: Update apps.json from upstream releases
         run: python3 tools/update.py
       - name: Commit and push if changed
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add apps.json
-          git diff --cached --quiet || git commit -m "自动更新：同步上游最新版本"
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "自动更新：同步上游最新版本"
           git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Publish Release (rolling latest tag)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -e
+          TAG="latest"
+          want=$(sha256sum apps.json | awk '{print $1}')
+          exists=false
+          if gh release view "$TAG" >/dev/null 2>&1; then exists=true; fi
+          have=""
+          if [ "$exists" = "true" ]; then
+            have=$(gh api "repos/${GITHUB_REPOSITORY}/releases/tags/${TAG}" --jq '.assets[] | select(.name=="apps.json") | (.digest // "")' 2>/dev/null | sed 's|^sha256:||' || true)
+          fi
+          if [ "$exists" = "true" ] && [ -n "$have" ] && [ "$have" = "$want" ]; then
+            echo "Release 附件已是最新，跳过"
+            exit 0
+          fi
+          if [ "$exists" = "true" ]; then
+            gh release upload "$TAG" apps.json --clobber
+            echo "已更新 Release 附件 apps.json（tag latest）"
+          else
+            gh release create "$TAG" apps.json --title "最新源文件（滚动更新）" --notes "本 release 的 tag 固定为 latest，其下的 apps.json 在每次内容变化后被覆盖。备用下载地址：https://github.com/Yakult00/ios-source/releases/download/latest/apps.json" --latest
+            echo "已创建 Release latest"
+          fi
