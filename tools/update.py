@@ -9,6 +9,7 @@
 脚本会下载 IPA 读出包名 / 版本 / 最低系统版本，所以不用手填。
 """
 import json
+import os
 import plistlib
 import sys
 import tempfile
@@ -22,10 +23,13 @@ OUT_FILE = ROOT / "apps.json"
 
 
 def gh(path):
-    req = urllib.request.Request(
-        "https://api.github.com" + path,
-        headers={"Accept": "application/vnd.github+json", "User-Agent": "ios-source-updater"},
-    )
+    # 用 GITHUB_TOKEN（工作流里自动提供）做认证请求，避免未认证的
+    # 60 次/小时共享限额导致 403 rate limit exceeded。
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "ios-source-updater"}
+    token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
+    req = urllib.request.Request("https://api.github.com" + path, headers=headers)
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.load(r)
 
