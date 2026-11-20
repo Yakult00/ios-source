@@ -7,6 +7,8 @@
 配置在 repos.json 里：每加一个项目就加一行 {"repo": "owner/name"}，
 再跑一遍这个脚本，apps.json 就会自动跟到最新版。
 脚本会下载 IPA 读出包名 / 版本 / 最低系统版本，所以不用手填。
+如果 IPA 里的版本号不是应用版本（比如 LÖVE 移植的 IPA 写的是引擎版本），
+在该行加 "version_from_tag": true，版本号就取 Release 的 tag。
 """
 import json
 import os
@@ -74,6 +76,11 @@ def build_app(cfg):
     print(f"   最新版 {rel['tag_name']}，{asset['name']} ({asset['size']} bytes)")
     info = ipa_info(asset["browser_download_url"])
     desc = (rel.get("body") or "").strip()
+    # 有的应用 IPA 里的版本号不是应用版本（比如 LÖVE 移植的 IPA 写的是
+    # 引擎版本 11.5），这时用 Release 的 tag 做版本号更准。
+    if cfg.get("version_from_tag"):
+        info["version"] = rel["tag_name"].lstrip("v")
+        info["buildVersion"] = rel["tag_name"].lstrip("v")
     version_entry = {
         "version": info["version"] or rel["tag_name"].lstrip("v"),
         "date": rel["published_at"][:10],
