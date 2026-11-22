@@ -168,7 +168,7 @@
       },
       "version": "1.3.3",
       "versionDate": "2026-11-22",
-      "versionDescription": "- 外挂面板·资源页：新增「升级宝石」独立一行（大号数字 + `+100/+1000/设9999/设99999` + 锁定）\n- 外挂面板·资源页：新增「一键解锁全部关卡（含无尽）」，写满 6 关 × 3 难度通关记录，重进游戏后生效\n- 外挂面板·老虎机页：新增核心滚轮 + 「添加选中核心」/「一键全部添加」，并显示已拥有核心数（n/48）\n- 核心滚轮显示中文名（从 chinese.json 的 `core.name.<key>` 抽出的固定 48 条，不跟游戏语言走）\n- 后端：新增 `core_add` / `core_add_all` 指令与 `[cores]` 目录段，状态回传增加 `cores` / `coresTotal`\n- 后端：启动时不再重放上一次遗留的一次性指令（修掉「存档被刷回全通关」）\n- 去除游戏内置光标\n- 优化了一些已知 bug，新增未知 bug",
+      "versionDescription": "- 去除游戏内置光标\r\n- 优化了一些已知 bug，新增未知 bug",
       "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.3/Slotbound-v1.3.3.ipa",
       "size": 103079195,
       "minOSVersion": "12.0",
@@ -181,7 +181,7 @@
           "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.3/Slotbound-v1.3.3.ipa",
           "size": 103079195,
           "minOSVersion": "12.0",
-          "localizedDescription": "- 外挂面板·资源页：新增「升级宝石」独立一行（大号数字 + `+100/+1000/设9999/设99999` + 锁定）\n- 外挂面板·资源页：新增「一键解锁全部关卡（含无尽）」，写满 6 关 × 3 难度通关记录，重进游戏后生效\n- 外挂面板·老虎机页：新增核心滚轮 + 「添加选中核心」/「一键全部添加」，并显示已拥有核心数（n/48）\n- 核心滚轮显示中文名（从 chinese.json 的 `core.name.<key>` 抽出的固定 48 条，不跟游戏语言走）\n- 后端：新增 `core_add` / `core_add_all` 指令与 `[cores]` 目录段，状态回传增加 `cores` / `coresTotal`\n- 后端：启动时不再重放上一次遗留的一次性指令（修掉「存档被刷回全通关」）\n- 去除游戏内置光标\n- 优化了一些已知 bug，新增未知 bug"
+          "localizedDescription": "- 去除游戏内置光标\r\n- 优化了一些已知 bug，新增未知 bug"
         }
       ],
       "releaseChannels": [
@@ -196,7 +196,7 @@
               "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.3/Slotbound-v1.3.3.ipa",
               "size": 103079195,
               "minOSVersion": "12.0",
-              "localizedDescription": "- 外挂面板·资源页：新增「升级宝石」独立一行（大号数字 + `+100/+1000/设9999/设99999` + 锁定）\n- 外挂面板·资源页：新增「一键解锁全部关卡（含无尽）」，写满 6 关 × 3 难度通关记录，重进游戏后生效\n- 外挂面板·老虎机页：新增核心滚轮 + 「添加选中核心」/「一键全部添加」，并显示已拥有核心数（n/48）\n- 核心滚轮显示中文名（从 chinese.json 的 `core.name.<key>` 抽出的固定 48 条，不跟游戏语言走）\n- 后端：新增 `core_add` / `core_add_all` 指令与 `[cores]` 目录段，状态回传增加 `cores` / `coresTotal`\n- 后端：启动时不再重放上一次遗留的一次性指令（修掉「存档被刷回全通关」）\n- 去除游戏内置光标\n- 优化了一些已知 bug，新增未知 bug"
+              "localizedDescription": "- 去除游戏内置光标\r\n- 优化了一些已知 bug，新增未知 bug"
             }
           ]
         }
