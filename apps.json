@@ -117,22 +117,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "2.3.3",
-      "versionDate": "2026-11-21",
-      "versionDescription": "## iPadn 2.3.3\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.3** 全面加固与体验升级版：重点修复下载/领许可时偶发「Apple 暂时无法完成该操作」的协议盲区（补齐 `1008` 会话过期刷新、`-128` 地区自动纠偏、新版条款提示与 HTTP 200 诊断日志）；升级「下载」页多选与统一撤销删除，新增安装包构建 SDK / Xcode 版本速查，修复「应用包」左滑变灰遮罩，并完成一轮覆盖安全脱敏、滚动性能、深浅色对比度与 11 语言本地化的全面审计优化。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **修复 Apple 下载/获取报错「暂时无法完成该操作」与诊断盲区**\r\n  - 补齐 `1008`（设备验证/会话过期）在下载、历史版本票据、领免费许可及 Mac 包路径中的自动刷新与重新登录处理；补充密码已更改（`Your password has changed.`）与账号停用（`Your account is disabled.`）的明确引导。\r\n  - 新增 `-128`（`MZCommerce.CountryMismatch`）自动纠偏：安全校验 Apple 返回的 `resetAndRedirect?dsf=` 商店代码，自动更新账号真实地区并重试，避免 `+86` 手机号或转区账号卡在地区错配。\r\n  - 新增 `buyProductFailure` 新版 App Store 条款（`termsPage`）检测与严格 `purchaseSuccess` 判定，并补全 `buyProduct` 请求参数与 `pod` 路由。\r\n  - 消除诊断盲区：Apple HTTP 200 plist 业务失败现自动写入严格脱敏的 `RequestFailureLog`（仅记录错误码、文档与弹窗标识，零隐私泄露），未知数字错误码亦会附带在提示末尾便于一眼定位。\r\n- **「下载」页多选体验升级与统一撤销删除**\r\n  - 「下载」页多选改为与「应用包」一致的就地勾选交互，同时纳入 **TestFlight** 任务支持全选与批量删除。\r\n  - 常规下载与 TestFlight 删除（单条左滑或批量多选）统一接入 5 秒撤销倒计时栈，点击撤销可一次性恢复全部已删任务与文件。\r\n- **安装包构建 SDK / Xcode 版本速查与交互修复**\r\n  - 下载详情、应用包与 TestFlight 详情新增构建 **SDK 与 Xcode 版本**快捷查看（自动结合 `Info.plist` 与 Mach-O `LC_BUILD_VERSION` 解析）。\r\n  - 修复专业模式「应用包」与「解密记录」列表左滑操作时整行变灰/出现半透明遮罩的问题。\r\n- **安全、性能与多语言体验全面加固**\r\n  - **安全性与稳定性**：加固诊断脱敏与 TestFlight 多账号 Cookie 隔离、强化 `TFSINF` `cryptid` 校验，提升已购历史同步容错并消除页面生命周期竞态。\r\n  - **滚动流畅度**：移除主线程同步磁盘 I/O 与文件扫描，补充图标与元数据缓存，显著提升「下载」「应用包」「已购」「TestFlight」长列表帧率与响应速度。\r\n  - **UI / 无障碍 / 11 语言**：补全 11 种语言本地化与阿拉伯语 RTL 适配，优化深浅色对比度、账号头像自适应灰阶与 TestFlight 统一占位图标。\r\n\r\n---\r\n\r\n### 📢 官方频道与反馈说明\r\n\r\n- **官方 Telegram 频道**：👉 [**https://t.me/ipadn_official**](https://t.me/ipadn_official)\r\n- **GitHub Issues 仅保留只读归档**：新版安装包与源码优先在官方 Telegram 频道发布；使用问题、排障与 Bug 反馈请直接前往频道**对应版本贴文评论区**提交。\r\n\r\n### ⚠️ TestFlight 实验性说明与免责声明\r\n\r\n- **实验性功能提醒**：TestFlight 下载与原生安装为 `v2.3.x` 系列推出的**实验性功能**，受 Apple 服务端策略、账号当前有效 Beta 资格、本地网络/代理与本机配对影响，建议先使用备用 Apple",
-      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.3/iPadn-2.3.3-unsigned.ipa",
-      "size": 49810722,
+      "version": "2.3.4",
+      "versionDate": "2026-11-22",
+      "versionDescription": "## iPadn 2.3.4\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.4** 体验与稳定性全面升级版：全面打通 **TestFlight 实时同步下载、后台断点续传、统一自动安装与灵动岛进度同步**；取消下载页与「应用包」冗余分组并在全应用（含「已解密」「Wi‑Fi 传输」「存储空间」）统一极简单色 TestFlight 图标；重构下载与 TestFlight 暂停/继续及全状态切换弹性形变动效；根治多账号切换反复触发验证码、多手机号 2FA 与 0 应用账号卡顿；统一「应用包」5 秒侧滑撤销与全应用原生居中弹窗、优化本机配对引导，并补齐 App Store 账单/条款报错引导及原生安装 iOS 17.4+ 与局域网防护。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **TestFlight 同步下载、后台续传、自动安装与灵动岛同步**\r\n  - TestFlight 任务在元数据就绪并实际开始下载后，实时同步显示在「下载」页顶部（准备阶段不提前占位）并联动底部「下载」标签角标，下载过程进度环与常规 App Store 下载体验保持一致。\r\n  - 接入后台传输与前台回退保活，支持真暂停/断点续传（`resumeData` 保存、续传不消耗重试次数、CDN 签名过期自动刷新链接）、实时网速/ETA 估算，并联动「全部暂停 / 全部继续」。\r\n  - TestFlight 同步接入「下载完成后自动安装」与统一安装弹窗，移除会话级「已安装」标签与按钮变色残留，安装行为与常规 IPA 完全一致。\r\n  - TestFlight 与普通下载统一接入**灵动岛与锁屏实时活动**，启用高频实时活动更新与后台保活同步，彻底修复退回后台后灵动岛百分比停滞不同步的问题（完成或暂停自动收起）。\r\n- **全应用统一列表/单色 TestFlight 图标与状态切换动效**\r\n  - 「下载」页与「应用包 › 原始 IPA」取消单独的 TestFlight 分组，与普通 IPA 合并排序展示；全应用统一在版本信息行前置极简单色 TestFlight 图标，移除旧蓝色 `TF` 胶囊。\r\n  - 补齐所有关联页面的统一展示与数据联动：**「应用包 › 已解密」**、解密详情、处理记录、正在处理卡片、原始 IPA 详情、安装页、**「Wi‑Fi 传输」**以及**「设置 › 备份与维护 › 存储空间」**（计入总容量、按大小排序并支持侧滑删除）；`DecryptRecord` 持久记录来源标识，删除原始 TF 包后解密产物与记录仍保留 TestFlight 图标。\r\n  - 修复 `AppStoreActionButton` 外层形变动画并统一重构下载页（常规 + TestFlight）、TestFlight 列表与详情页为单一持久操作组件：获取 → 加载旋转弧 → 下载进度环 → 暂停/继续胶囊 → 完成打钩 → 安装全程原地弹性形变，状态文字纵滑切换，进度条颜色在主题色与暂停灰之间柔和过渡。\r\n- **根治切号反复弹验证码、多手机号 2FA 与 0 应用账号**\r\n  - 后台静默已购同步不再反复触发无验证码登录刷新；TestFlight 启动与切换账号优先静默恢复本地会话与 10-cookie 快照，避免误触发系统验证码推送。\r\n  - 完善多受信任手机号 2FA 选择器（单号码自动发送、多号码弹窗选择），修复 2FA 弹窗关闭竞态与验证后瞬时 `503` 重试。\r\n  - 优化 0 应用账号本地缓存加载（0ms 展示空态并遵守刷新冷却），并将 `TFDoh` 探测收紧为 2 秒并发，消除切号和启动时的长阻塞。\r\n- **应用包侧滑撤销、居中弹窗、配对优化与 iOS 17.4+ 防护**\r\n  - 专业模式「应用包」全部 5 类列表项（TestFlight、原始包、独立包、解密产物、孤立产物）左滑删除统一接入 **5 秒原子撤销倒计时**（可完整恢复文件与解密记录）；长按菜单删除与批量删除弹出居中确认弹窗并直删，不再重复倒计时。\r\n  - 全应用所有二次确认弹窗（含退出登录、清除最近搜索、清除历史版本缓存等）统一升级为原生居中 `.alert`，并精简「账号」页移除与底部 Tab 重复的入口。\r\n  - 优化 iOS 27 本机配对引导：将「取消配对」移至导航栏左上角与「打",
+      "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.4/iPadn-2.3.4-unsigned.ipa",
+      "size": 49929497,
       "minOSVersion": "16.0",
       "versions": [
         {
-          "version": "2.3.3",
-          "date": "2026-11-21",
-          "publishedAt": "2026-11-21T14:14:24Z",
-          "buildVersion": "39",
-          "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.3/iPadn-2.3.3-unsigned.ipa",
-          "size": 49810722,
+          "version": "2.3.4",
+          "date": "2026-11-22",
+          "publishedAt": "2026-11-22T05:56:54Z",
+          "buildVersion": "40",
+          "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.4/iPadn-2.3.4-unsigned.ipa",
+          "size": 49929497,
           "minOSVersion": "16.0",
-          "localizedDescription": "## iPadn 2.3.3\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.3** 全面加固与体验升级版：重点修复下载/领许可时偶发「Apple 暂时无法完成该操作」的协议盲区（补齐 `1008` 会话过期刷新、`-128` 地区自动纠偏、新版条款提示与 HTTP 200 诊断日志）；升级「下载」页多选与统一撤销删除，新增安装包构建 SDK / Xcode 版本速查，修复「应用包」左滑变灰遮罩，并完成一轮覆盖安全脱敏、滚动性能、深浅色对比度与 11 语言本地化的全面审计优化。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **修复 Apple 下载/获取报错「暂时无法完成该操作」与诊断盲区**\r\n  - 补齐 `1008`（设备验证/会话过期）在下载、历史版本票据、领免费许可及 Mac 包路径中的自动刷新与重新登录处理；补充密码已更改（`Your password has changed.`）与账号停用（`Your account is disabled.`）的明确引导。\r\n  - 新增 `-128`（`MZCommerce.CountryMismatch`）自动纠偏：安全校验 Apple 返回的 `resetAndRedirect?dsf=` 商店代码，自动更新账号真实地区并重试，避免 `+86` 手机号或转区账号卡在地区错配。\r\n  - 新增 `buyProductFailure` 新版 App Store 条款（`termsPage`）检测与严格 `purchaseSuccess` 判定，并补全 `buyProduct` 请求参数与 `pod` 路由。\r\n  - 消除诊断盲区：Apple HTTP 200 plist 业务失败现自动写入严格脱敏的 `RequestFailureLog`（仅记录错误码、文档与弹窗标识，零隐私泄露），未知数字错误码亦会附带在提示末尾便于一眼定位。\r\n- **「下载」页多选体验升级与统一撤销删除**\r\n  - 「下载」页多选改为与「应用包」一致的就地勾选交互，同时纳入 **TestFlight** 任务支持全选与批量删除。\r\n  - 常规下载与 TestFlight 删除（单条左滑或批量多选）统一接入 5 秒撤销倒计时栈，点击撤销可一次性恢复全部已删任务与文件。\r\n- **安装包构建 SDK / Xcode 版本速查与交互修复**\r\n  - 下载详情、应用包与 TestFlight 详情新增构建 **SDK 与 Xcode 版本**快捷查看（自动结合 `Info.plist` 与 Mach-O `LC_BUILD_VERSION` 解析）。\r\n  - 修复专业模式「应用包」与「解密记录」列表左滑操作时整行变灰/出现半透明遮罩的问题。\r\n- **安全、性能与多语言体验全面加固**\r\n  - **安全性与稳定性**：加固诊断脱敏与 TestFlight 多账号 Cookie 隔离、强化 `TFSINF` `cryptid` 校验，提升已购历史同步容错并消除页面生命周期竞态。\r\n  - **滚动流畅度**：移除主线程同步磁盘 I/O 与文件扫描，补充图标与元数据缓存，显著提升「下载」「应用包」「已购」「TestFlight」长列表帧率与响应速度。\r\n  - **UI / 无障碍 / 11 语言**：补全 11 种语言本地化与阿拉伯语 RTL 适配，优化深浅色对比度、账号头像自适应灰阶与 TestFlight 统一占位图标。\r\n\r\n---\r\n\r\n### 📢 官方频道与反馈说明\r\n\r\n- **官方 Telegram 频道**：👉 [**https://t.me/ipadn_official**](https://t.me/ipadn_official)\r\n- **GitHub Issues 仅保留只读归档**：新版安装包与源码优先在官方 Telegram 频道发布；使用问题、排障与 Bug 反馈请直接前往频道**对应版本贴文评论区**提交。\r\n\r\n### ⚠️ TestFlight 实验性说明与免责声明\r\n\r\n- **实验性功能提醒**：TestFlight 下载与原生安装为 `v2.3.x` 系列推出的**实验性功能**，受 Apple 服务端策略、账号当前有效 Beta 资格、本地网络/代理与本机配对影响，建议先使用备用 Apple"
+          "localizedDescription": "## iPadn 2.3.4\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.4** 体验与稳定性全面升级版：全面打通 **TestFlight 实时同步下载、后台断点续传、统一自动安装与灵动岛进度同步**；取消下载页与「应用包」冗余分组并在全应用（含「已解密」「Wi‑Fi 传输」「存储空间」）统一极简单色 TestFlight 图标；重构下载与 TestFlight 暂停/继续及全状态切换弹性形变动效；根治多账号切换反复触发验证码、多手机号 2FA 与 0 应用账号卡顿；统一「应用包」5 秒侧滑撤销与全应用原生居中弹窗、优化本机配对引导，并补齐 App Store 账单/条款报错引导及原生安装 iOS 17.4+ 与局域网防护。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **TestFlight 同步下载、后台续传、自动安装与灵动岛同步**\r\n  - TestFlight 任务在元数据就绪并实际开始下载后，实时同步显示在「下载」页顶部（准备阶段不提前占位）并联动底部「下载」标签角标，下载过程进度环与常规 App Store 下载体验保持一致。\r\n  - 接入后台传输与前台回退保活，支持真暂停/断点续传（`resumeData` 保存、续传不消耗重试次数、CDN 签名过期自动刷新链接）、实时网速/ETA 估算，并联动「全部暂停 / 全部继续」。\r\n  - TestFlight 同步接入「下载完成后自动安装」与统一安装弹窗，移除会话级「已安装」标签与按钮变色残留，安装行为与常规 IPA 完全一致。\r\n  - TestFlight 与普通下载统一接入**灵动岛与锁屏实时活动**，启用高频实时活动更新与后台保活同步，彻底修复退回后台后灵动岛百分比停滞不同步的问题（完成或暂停自动收起）。\r\n- **全应用统一列表/单色 TestFlight 图标与状态切换动效**\r\n  - 「下载」页与「应用包 › 原始 IPA」取消单独的 TestFlight 分组，与普通 IPA 合并排序展示；全应用统一在版本信息行前置极简单色 TestFlight 图标，移除旧蓝色 `TF` 胶囊。\r\n  - 补齐所有关联页面的统一展示与数据联动：**「应用包 › 已解密」**、解密详情、处理记录、正在处理卡片、原始 IPA 详情、安装页、**「Wi‑Fi 传输」**以及**「设置 › 备份与维护 › 存储空间」**（计入总容量、按大小排序并支持侧滑删除）；`DecryptRecord` 持久记录来源标识，删除原始 TF 包后解密产物与记录仍保留 TestFlight 图标。\r\n  - 修复 `AppStoreActionButton` 外层形变动画并统一重构下载页（常规 + TestFlight）、TestFlight 列表与详情页为单一持久操作组件：获取 → 加载旋转弧 → 下载进度环 → 暂停/继续胶囊 → 完成打钩 → 安装全程原地弹性形变，状态文字纵滑切换，进度条颜色在主题色与暂停灰之间柔和过渡。\r\n- **根治切号反复弹验证码、多手机号 2FA 与 0 应用账号**\r\n  - 后台静默已购同步不再反复触发无验证码登录刷新；TestFlight 启动与切换账号优先静默恢复本地会话与 10-cookie 快照，避免误触发系统验证码推送。\r\n  - 完善多受信任手机号 2FA 选择器（单号码自动发送、多号码弹窗选择），修复 2FA 弹窗关闭竞态与验证后瞬时 `503` 重试。\r\n  - 优化 0 应用账号本地缓存加载（0ms 展示空态并遵守刷新冷却），并将 `TFDoh` 探测收紧为 2 秒并发，消除切号和启动时的长阻塞。\r\n- **应用包侧滑撤销、居中弹窗、配对优化与 iOS 17.4+ 防护**\r\n  - 专业模式「应用包」全部 5 类列表项（TestFlight、原始包、独立包、解密产物、孤立产物）左滑删除统一接入 **5 秒原子撤销倒计时**（可完整恢复文件与解密记录）；长按菜单删除与批量删除弹出居中确认弹窗并直删，不再重复倒计时。\r\n  - 全应用所有二次确认弹窗（含退出登录、清除最近搜索、清除历史版本缓存等）统一升级为原生居中 `.alert`，并精简「账号」页移除与底部 Tab 重复的入口。\r\n  - 优化 iOS 27 本机配对引导：将「取消配对」移至导航栏左上角与「打"
         }
       ],
       "releaseChannels": [
@@ -140,14 +140,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "2.3.3",
-              "date": "2026-11-21",
-              "publishedAt": "2026-11-21T14:14:24Z",
-              "buildVersion": "39",
-              "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.3/iPadn-2.3.3-unsigned.ipa",
-              "size": 49810722,
+              "version": "2.3.4",
+              "date": "2026-11-22",
+              "publishedAt": "2026-11-22T05:56:54Z",
+              "buildVersion": "40",
+              "downloadURL": "https://github.com/mengangs/ipadn/releases/download/v2.3.4/iPadn-2.3.4-unsigned.ipa",
+              "size": 49929497,
               "minOSVersion": "16.0",
-              "localizedDescription": "## iPadn 2.3.3\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.3** 全面加固与体验升级版：重点修复下载/领许可时偶发「Apple 暂时无法完成该操作」的协议盲区（补齐 `1008` 会话过期刷新、`-128` 地区自动纠偏、新版条款提示与 HTTP 200 诊断日志）；升级「下载」页多选与统一撤销删除，新增安装包构建 SDK / Xcode 版本速查，修复「应用包」左滑变灰遮罩，并完成一轮覆盖安全脱敏、滚动性能、深浅色对比度与 11 语言本地化的全面审计优化。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **修复 Apple 下载/获取报错「暂时无法完成该操作」与诊断盲区**\r\n  - 补齐 `1008`（设备验证/会话过期）在下载、历史版本票据、领免费许可及 Mac 包路径中的自动刷新与重新登录处理；补充密码已更改（`Your password has changed.`）与账号停用（`Your account is disabled.`）的明确引导。\r\n  - 新增 `-128`（`MZCommerce.CountryMismatch`）自动纠偏：安全校验 Apple 返回的 `resetAndRedirect?dsf=` 商店代码，自动更新账号真实地区并重试，避免 `+86` 手机号或转区账号卡在地区错配。\r\n  - 新增 `buyProductFailure` 新版 App Store 条款（`termsPage`）检测与严格 `purchaseSuccess` 判定，并补全 `buyProduct` 请求参数与 `pod` 路由。\r\n  - 消除诊断盲区：Apple HTTP 200 plist 业务失败现自动写入严格脱敏的 `RequestFailureLog`（仅记录错误码、文档与弹窗标识，零隐私泄露），未知数字错误码亦会附带在提示末尾便于一眼定位。\r\n- **「下载」页多选体验升级与统一撤销删除**\r\n  - 「下载」页多选改为与「应用包」一致的就地勾选交互，同时纳入 **TestFlight** 任务支持全选与批量删除。\r\n  - 常规下载与 TestFlight 删除（单条左滑或批量多选）统一接入 5 秒撤销倒计时栈，点击撤销可一次性恢复全部已删任务与文件。\r\n- **安装包构建 SDK / Xcode 版本速查与交互修复**\r\n  - 下载详情、应用包与 TestFlight 详情新增构建 **SDK 与 Xcode 版本**快捷查看（自动结合 `Info.plist` 与 Mach-O `LC_BUILD_VERSION` 解析）。\r\n  - 修复专业模式「应用包」与「解密记录」列表左滑操作时整行变灰/出现半透明遮罩的问题。\r\n- **安全、性能与多语言体验全面加固**\r\n  - **安全性与稳定性**：加固诊断脱敏与 TestFlight 多账号 Cookie 隔离、强化 `TFSINF` `cryptid` 校验，提升已购历史同步容错并消除页面生命周期竞态。\r\n  - **滚动流畅度**：移除主线程同步磁盘 I/O 与文件扫描，补充图标与元数据缓存，显著提升「下载」「应用包」「已购」「TestFlight」长列表帧率与响应速度。\r\n  - **UI / 无障碍 / 11 语言**：补全 11 种语言本地化与阿拉伯语 RTL 适配，优化深浅色对比度、账号头像自适应灰阶与 TestFlight 统一占位图标。\r\n\r\n---\r\n\r\n### 📢 官方频道与反馈说明\r\n\r\n- **官方 Telegram 频道**：👉 [**https://t.me/ipadn_official**](https://t.me/ipadn_official)\r\n- **GitHub Issues 仅保留只读归档**：新版安装包与源码优先在官方 Telegram 频道发布；使用问题、排障与 Bug 反馈请直接前往频道**对应版本贴文评论区**提交。\r\n\r\n### ⚠️ TestFlight 实验性说明与免责声明\r\n\r\n- **实验性功能提醒**：TestFlight 下载与原生安装为 `v2.3.x` 系列推出的**实验性功能**，受 Apple 服务端策略、账号当前有效 Beta 资格、本地网络/代理与本机配对影响，建议先使用备用 Apple"
+              "localizedDescription": "## iPadn 2.3.4\r\n\r\n**目录 / Contents**：[简体中文](#-核心修复与优化) · [TestFlight 说明与免责](#-testflight-实验性说明与免责声明) · [English](#english) · [TestFlight Notice](#testflight-experimental-notice--disclaimer)\r\n\r\n本次为 **v2.3.4** 体验与稳定性全面升级版：全面打通 **TestFlight 实时同步下载、后台断点续传、统一自动安装与灵动岛进度同步**；取消下载页与「应用包」冗余分组并在全应用（含「已解密」「Wi‑Fi 传输」「存储空间」）统一极简单色 TestFlight 图标；重构下载与 TestFlight 暂停/继续及全状态切换弹性形变动效；根治多账号切换反复触发验证码、多手机号 2FA 与 0 应用账号卡顿；统一「应用包」5 秒侧滑撤销与全应用原生居中弹窗、优化本机配对引导，并补齐 App Store 账单/条款报错引导及原生安装 iOS 17.4+ 与局域网防护。安装包均未签名，请使用自用签名工具签名后安装。\r\n\r\n### 🔧 核心修复与优化\r\n\r\n- **TestFlight 同步下载、后台续传、自动安装与灵动岛同步**\r\n  - TestFlight 任务在元数据就绪并实际开始下载后，实时同步显示在「下载」页顶部（准备阶段不提前占位）并联动底部「下载」标签角标，下载过程进度环与常规 App Store 下载体验保持一致。\r\n  - 接入后台传输与前台回退保活，支持真暂停/断点续传（`resumeData` 保存、续传不消耗重试次数、CDN 签名过期自动刷新链接）、实时网速/ETA 估算，并联动「全部暂停 / 全部继续」。\r\n  - TestFlight 同步接入「下载完成后自动安装」与统一安装弹窗，移除会话级「已安装」标签与按钮变色残留，安装行为与常规 IPA 完全一致。\r\n  - TestFlight 与普通下载统一接入**灵动岛与锁屏实时活动**，启用高频实时活动更新与后台保活同步，彻底修复退回后台后灵动岛百分比停滞不同步的问题（完成或暂停自动收起）。\r\n- **全应用统一列表/单色 TestFlight 图标与状态切换动效**\r\n  - 「下载」页与「应用包 › 原始 IPA」取消单独的 TestFlight 分组，与普通 IPA 合并排序展示；全应用统一在版本信息行前置极简单色 TestFlight 图标，移除旧蓝色 `TF` 胶囊。\r\n  - 补齐所有关联页面的统一展示与数据联动：**「应用包 › 已解密」**、解密详情、处理记录、正在处理卡片、原始 IPA 详情、安装页、**「Wi‑Fi 传输」**以及**「设置 › 备份与维护 › 存储空间」**（计入总容量、按大小排序并支持侧滑删除）；`DecryptRecord` 持久记录来源标识，删除原始 TF 包后解密产物与记录仍保留 TestFlight 图标。\r\n  - 修复 `AppStoreActionButton` 外层形变动画并统一重构下载页（常规 + TestFlight）、TestFlight 列表与详情页为单一持久操作组件：获取 → 加载旋转弧 → 下载进度环 → 暂停/继续胶囊 → 完成打钩 → 安装全程原地弹性形变，状态文字纵滑切换，进度条颜色在主题色与暂停灰之间柔和过渡。\r\n- **根治切号反复弹验证码、多手机号 2FA 与 0 应用账号**\r\n  - 后台静默已购同步不再反复触发无验证码登录刷新；TestFlight 启动与切换账号优先静默恢复本地会话与 10-cookie 快照，避免误触发系统验证码推送。\r\n  - 完善多受信任手机号 2FA 选择器（单号码自动发送、多号码弹窗选择），修复 2FA 弹窗关闭竞态与验证后瞬时 `503` 重试。\r\n  - 优化 0 应用账号本地缓存加载（0ms 展示空态并遵守刷新冷却），并将 `TFDoh` 探测收紧为 2 秒并发，消除切号和启动时的长阻塞。\r\n- **应用包侧滑撤销、居中弹窗、配对优化与 iOS 17.4+ 防护**\r\n  - 专业模式「应用包」全部 5 类列表项（TestFlight、原始包、独立包、解密产物、孤立产物）左滑删除统一接入 **5 秒原子撤销倒计时**（可完整恢复文件与解密记录）；长按菜单删除与批量删除弹出居中确认弹窗并直删，不再重复倒计时。\r\n  - 全应用所有二次确认弹窗（含退出登录、清除最近搜索、清除历史版本缓存等）统一升级为原生居中 `.alert`，并精简「账号」页移除与底部 Tab 重复的入口。\r\n  - 优化 iOS 27 本机配对引导：将「取消配对」移至导航栏左上角与「打"
             }
           ]
         }
@@ -166,22 +166,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "1.3.0",
-      "versionDate": "2026-11-21",
-      "versionDescription": "## 更新内容\n\n- 优化游戏性能\n- ESC 按钮和右键模式按钮改大了一些\n\n## 下载\n\n| 文件 | 说明 |\n|---|---|---|\n| `Slotbound-v1.3.0.ipa` | 游戏包（未签名），用 LiveContainer / 自签工具安装 |\n| `SlotboundTrainer.dylib` | 游戏辅助面板 · 越狱设备用 |\n| `SlotboundTrainer-NoJIT.dylib` | 游戏辅助面板 · 无 JIT 环境用（不含内存改写） |\n\ndylib 安装：放到 `/var/jb/Library/MobileSubstrate/DynamicLibraries/`，`ldid -S` 签一次，重开游戏，点右下角浮球打开面板。",
-      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.0/Slotbound-v1.3.0.ipa",
-      "size": 103082015,
+      "version": "1.3.1",
+      "versionDate": "2026-11-22",
+      "versionDescription": "触屏交互全面重做（手势层 v2）：\r\n\r\n- 拖兵：按住拖动跟随，不跳变、不误触\r\n- 长按士兵/道具：发右键 + 悬停看详情/使用\r\n- 单击：立即确认\r\n- 升级树 / 选专职 / 商店购买：第一下悬停、再点确认（两段式）\r\n- 升级树左上角返回键：单击直接退出\r\n- 升级树：双指缩放，同时可拖动平移\r\n- 列表：拖动滚动",
+      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.1/Slotbound-v1.3.1.ipa",
+      "size": 103076686,
       "minOSVersion": "12.0",
       "versions": [
         {
-          "version": "1.3.0",
-          "date": "2026-11-21",
-          "publishedAt": "2026-11-21T10:47:00Z",
-          "buildVersion": "1.3.0",
-          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.0/Slotbound-v1.3.0.ipa",
-          "size": 103082015,
+          "version": "1.3.1",
+          "date": "2026-11-22",
+          "publishedAt": "2026-11-22T07:47:25Z",
+          "buildVersion": "1.3.1",
+          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.1/Slotbound-v1.3.1.ipa",
+          "size": 103076686,
           "minOSVersion": "12.0",
-          "localizedDescription": "## 更新内容\n\n- 优化游戏性能\n- ESC 按钮和右键模式按钮改大了一些\n\n## 下载\n\n| 文件 | 说明 |\n|---|---|---|\n| `Slotbound-v1.3.0.ipa` | 游戏包（未签名），用 LiveContainer / 自签工具安装 |\n| `SlotboundTrainer.dylib` | 游戏辅助面板 · 越狱设备用 |\n| `SlotboundTrainer-NoJIT.dylib` | 游戏辅助面板 · 无 JIT 环境用（不含内存改写） |\n\ndylib 安装：放到 `/var/jb/Library/MobileSubstrate/DynamicLibraries/`，`ldid -S` 签一次，重开游戏，点右下角浮球打开面板。"
+          "localizedDescription": "触屏交互全面重做（手势层 v2）：\r\n\r\n- 拖兵：按住拖动跟随，不跳变、不误触\r\n- 长按士兵/道具：发右键 + 悬停看详情/使用\r\n- 单击：立即确认\r\n- 升级树 / 选专职 / 商店购买：第一下悬停、再点确认（两段式）\r\n- 升级树左上角返回键：单击直接退出\r\n- 升级树：双指缩放，同时可拖动平移\r\n- 列表：拖动滚动"
         }
       ],
       "releaseChannels": [
@@ -189,14 +189,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "1.3.0",
-              "date": "2026-11-21",
-              "publishedAt": "2026-11-21T10:47:00Z",
-              "buildVersion": "1.3.0",
-              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.0/Slotbound-v1.3.0.ipa",
-              "size": 103082015,
+              "version": "1.3.1",
+              "date": "2026-11-22",
+              "publishedAt": "2026-11-22T07:47:25Z",
+              "buildVersion": "1.3.1",
+              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.1/Slotbound-v1.3.1.ipa",
+              "size": 103076686,
               "minOSVersion": "12.0",
-              "localizedDescription": "## 更新内容\n\n- 优化游戏性能\n- ESC 按钮和右键模式按钮改大了一些\n\n## 下载\n\n| 文件 | 说明 |\n|---|---|---|\n| `Slotbound-v1.3.0.ipa` | 游戏包（未签名），用 LiveContainer / 自签工具安装 |\n| `SlotboundTrainer.dylib` | 游戏辅助面板 · 越狱设备用 |\n| `SlotboundTrainer-NoJIT.dylib` | 游戏辅助面板 · 无 JIT 环境用（不含内存改写） |\n\ndylib 安装：放到 `/var/jb/Library/MobileSubstrate/DynamicLibraries/`，`ldid -S` 签一次，重开游戏，点右下角浮球打开面板。"
+              "localizedDescription": "触屏交互全面重做（手势层 v2）：\r\n\r\n- 拖兵：按住拖动跟随，不跳变、不误触\r\n- 长按士兵/道具：发右键 + 悬停看详情/使用\r\n- 单击：立即确认\r\n- 升级树 / 选专职 / 商店购买：第一下悬停、再点确认（两段式）\r\n- 升级树左上角返回键：单击直接退出\r\n- 升级树：双指缩放，同时可拖动平移\r\n- 列表：拖动滚动"
             }
           ]
         }
