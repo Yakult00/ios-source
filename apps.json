@@ -166,22 +166,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "1.3.4",
+      "version": "1.3.5",
       "versionDate": "2026-11-23",
-      "versionDescription": "- 强制游戏横屏启动：Info.plist 只保留横屏方向，修竖屏启动游戏被挤到屏幕一侧的问题",
-      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.4/Slotbound-v1.3.4.ipa",
-      "size": 103084900,
+      "versionDescription": "- 修复了一个严重的 bug：主菜单按 ESC 返回键或 L/R 切换键时手指一动就闪退",
+      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.5/Slotbound-v1.3.5.ipa",
+      "size": 103084858,
       "minOSVersion": "12.0",
       "versions": [
         {
-          "version": "1.3.4",
+          "version": "1.3.5",
           "date": "2026-11-23",
-          "publishedAt": "2026-11-23T08:02:45Z",
-          "buildVersion": "1.3.4",
-          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.4/Slotbound-v1.3.4.ipa",
-          "size": 103084900,
+          "publishedAt": "2026-11-23T11:04:33Z",
+          "buildVersion": "1.3.5",
+          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.5/Slotbound-v1.3.5.ipa",
+          "size": 103084858,
           "minOSVersion": "12.0",
-          "localizedDescription": "- 强制游戏横屏启动：Info.plist 只保留横屏方向，修竖屏启动游戏被挤到屏幕一侧的问题"
+          "localizedDescription": "- 修复了一个严重的 bug：主菜单按 ESC 返回键或 L/R 切换键时手指一动就闪退"
         }
       ],
       "releaseChannels": [
@@ -189,14 +189,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "1.3.4",
+              "version": "1.3.5",
               "date": "2026-11-23",
-              "publishedAt": "2026-11-23T08:02:45Z",
-              "buildVersion": "1.3.4",
-              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.4/Slotbound-v1.3.4.ipa",
-              "size": 103084900,
+              "publishedAt": "2026-11-23T11:04:33Z",
+              "buildVersion": "1.3.5",
+              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.5/Slotbound-v1.3.5.ipa",
+              "size": 103084858,
               "minOSVersion": "12.0",
-              "localizedDescription": "- 强制游戏横屏启动：Info.plist 只保留横屏方向，修竖屏启动游戏被挤到屏幕一侧的问题"
+              "localizedDescription": "- 修复了一个严重的 bug：主菜单按 ESC 返回键或 L/R 切换键时手指一动就闪退"
             }
           ]
         }
