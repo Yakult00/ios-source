@@ -166,22 +166,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "1.3.3",
-      "versionDate": "2026-11-22",
-      "versionDescription": "- 去除游戏内置光标\r\n- 优化了一些已知 bug，新增未知 bug",
-      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.3/Slotbound-v1.3.3.ipa",
-      "size": 103079195,
+      "version": "1.3.4",
+      "versionDate": "2026-11-23",
+      "versionDescription": "- 强制游戏横屏启动：Info.plist 只保留横屏方向，修竖屏启动游戏被挤到屏幕一侧的问题",
+      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.4/Slotbound-v1.3.4.ipa",
+      "size": 103084900,
       "minOSVersion": "12.0",
       "versions": [
         {
-          "version": "1.3.3",
-          "date": "2026-11-22",
-          "publishedAt": "2026-11-22T16:59:26Z",
-          "buildVersion": "1.3.3",
-          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.3/Slotbound-v1.3.3.ipa",
-          "size": 103079195,
+          "version": "1.3.4",
+          "date": "2026-11-23",
+          "publishedAt": "2026-11-23T08:02:45Z",
+          "buildVersion": "1.3.4",
+          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.4/Slotbound-v1.3.4.ipa",
+          "size": 103084900,
           "minOSVersion": "12.0",
-          "localizedDescription": "- 去除游戏内置光标\r\n- 优化了一些已知 bug，新增未知 bug"
+          "localizedDescription": "- 强制游戏横屏启动：Info.plist 只保留横屏方向，修竖屏启动游戏被挤到屏幕一侧的问题"
         }
       ],
       "releaseChannels": [
@@ -189,14 +189,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "1.3.3",
-              "date": "2026-11-22",
-              "publishedAt": "2026-11-22T16:59:26Z",
-              "buildVersion": "1.3.3",
-              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.3/Slotbound-v1.3.3.ipa",
-              "size": 103079195,
+              "version": "1.3.4",
+              "date": "2026-11-23",
+              "publishedAt": "2026-11-23T08:02:45Z",
+              "buildVersion": "1.3.4",
+              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.3.4/Slotbound-v1.3.4.ipa",
+              "size": 103084900,
               "minOSVersion": "12.0",
-              "localizedDescription": "- 去除游戏内置光标\r\n- 优化了一些已知 bug，新增未知 bug"
+              "localizedDescription": "- 强制游戏横屏启动：Info.plist 只保留横屏方向，修竖屏启动游戏被挤到屏幕一侧的问题"
             }
           ]
         }
