@@ -168,7 +168,7 @@
       },
       "version": "1.4.1",
       "versionDate": "2026-11-24",
-      "versionDescription": "- 修复长按士兵不出详细：v1.0.3 的 `tooltip:mousepressed(button=2)` 先被前置分支 `return true`，`pinHoveredUnit` 从未执行；垫片现在右键后自行钉住 `candidate.ref`\n- 修复石头/核心列表长按右键不能重掷：游戏那句 `stone.rerollAt` 排在 tooltip 之后永远轮不到，垫片在 `ui._stoneMode` 时补调\n- 修复战斗详细/结算明细列表拖不动：`battle/prep/spin` 阶段按落点是否在单位上区分拖兵与滚轮，非单位上的拖动转成滚轮派发\n- 长按触发时先悬停 90ms 再发右键，避免同一帧读到上一帧的 `candidate`",
+      "versionDescription": "- 修复长按士兵不出详细\n- 修复石头/核心列表长按不能重掷\n- 修复战斗详细/结算明细列表拖不动",
       "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
       "size": 103103326,
       "minOSVersion": "12.0",
@@ -181,7 +181,7 @@
           "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
           "size": 103103326,
           "minOSVersion": "12.0",
-          "localizedDescription": "- 修复长按士兵不出详细：v1.0.3 的 `tooltip:mousepressed(button=2)` 先被前置分支 `return true`，`pinHoveredUnit` 从未执行；垫片现在右键后自行钉住 `candidate.ref`\n- 修复石头/核心列表长按右键不能重掷：游戏那句 `stone.rerollAt` 排在 tooltip 之后永远轮不到，垫片在 `ui._stoneMode` 时补调\n- 修复战斗详细/结算明细列表拖不动：`battle/prep/spin` 阶段按落点是否在单位上区分拖兵与滚轮，非单位上的拖动转成滚轮派发\n- 长按触发时先悬停 90ms 再发右键，避免同一帧读到上一帧的 `candidate`"
+          "localizedDescription": "- 修复长按士兵不出详细\n- 修复石头/核心列表长按不能重掷\n- 修复战斗详细/结算明细列表拖不动"
         }
       ],
       "releaseChannels": [
@@ -196,7 +196,7 @@
               "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
               "size": 103103326,
               "minOSVersion": "12.0",
-              "localizedDescription": "- 修复长按士兵不出详细：v1.0.3 的 `tooltip:mousepressed(button=2)` 先被前置分支 `return true`，`pinHoveredUnit` 从未执行；垫片现在右键后自行钉住 `candidate.ref`\n- 修复石头/核心列表长按右键不能重掷：游戏那句 `stone.rerollAt` 排在 tooltip 之后永远轮不到，垫片在 `ui._stoneMode` 时补调\n- 修复战斗详细/结算明细列表拖不动：`battle/prep/spin` 阶段按落点是否在单位上区分拖兵与滚轮，非单位上的拖动转成滚轮派发\n- 长按触发时先悬停 90ms 再发右键，避免同一帧读到上一帧的 `candidate`"
+              "localizedDescription": "- 修复长按士兵不出详细\n- 修复石头/核心列表长按不能重掷\n- 修复战斗详细/结算明细列表拖不动"
             }
           ]
         }
