@@ -166,22 +166,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "1.4.0",
-      "versionDate": "2026-11-23",
-      "versionDescription": "- 游戏文件跟随上游更新为 PC v1.0.3：暂停界面新增放弃按钮、任务重随等\n- 升级树手势（捏合缩放、拖动平移）跟随新版游戏文件重新适配\n\n\n移植版版本号与官方 PC 版的对照见 README。每个版本默认包含之前所有版本的改动。",
-      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.0/Slotbound-v1.4.0.ipa",
-      "size": 103102126,
+      "version": "1.4.1",
+      "versionDate": "2026-11-24",
+      "versionDescription": "- 修复长按士兵不出详细：v1.0.3 的 `tooltip:mousepressed(button=2)` 先被前置分支 `return true`，`pinHoveredUnit` 从未执行；垫片现在右键后自行钉住 `candidate.ref`\n- 修复石头/核心列表长按右键不能重掷：游戏那句 `stone.rerollAt` 排在 tooltip 之后永远轮不到，垫片在 `ui._stoneMode` 时补调\n- 修复战斗详细/结算明细列表拖不动：`battle/prep/spin` 阶段按落点是否在单位上区分拖兵与滚轮，非单位上的拖动转成滚轮派发\n- 长按触发时先悬停 90ms 再发右键，避免同一帧读到上一帧的 `candidate`",
+      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
+      "size": 103103326,
       "minOSVersion": "12.0",
       "versions": [
         {
-          "version": "1.4.0",
-          "date": "2026-11-23",
-          "publishedAt": "2026-11-23T16:07:06Z",
-          "buildVersion": "1.4.0",
-          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.0/Slotbound-v1.4.0.ipa",
-          "size": 103102126,
+          "version": "1.4.1",
+          "date": "2026-11-24",
+          "publishedAt": "2026-11-24T09:09:31Z",
+          "buildVersion": "1.4.1",
+          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
+          "size": 103103326,
           "minOSVersion": "12.0",
-          "localizedDescription": "- 游戏文件跟随上游更新为 PC v1.0.3：暂停界面新增放弃按钮、任务重随等\n- 升级树手势（捏合缩放、拖动平移）跟随新版游戏文件重新适配\n\n\n移植版版本号与官方 PC 版的对照见 README。每个版本默认包含之前所有版本的改动。"
+          "localizedDescription": "- 修复长按士兵不出详细：v1.0.3 的 `tooltip:mousepressed(button=2)` 先被前置分支 `return true`，`pinHoveredUnit` 从未执行；垫片现在右键后自行钉住 `candidate.ref`\n- 修复石头/核心列表长按右键不能重掷：游戏那句 `stone.rerollAt` 排在 tooltip 之后永远轮不到，垫片在 `ui._stoneMode` 时补调\n- 修复战斗详细/结算明细列表拖不动：`battle/prep/spin` 阶段按落点是否在单位上区分拖兵与滚轮，非单位上的拖动转成滚轮派发\n- 长按触发时先悬停 90ms 再发右键，避免同一帧读到上一帧的 `candidate`"
         }
       ],
       "releaseChannels": [
@@ -189,14 +189,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "1.4.0",
-              "date": "2026-11-23",
-              "publishedAt": "2026-11-23T16:07:06Z",
-              "buildVersion": "1.4.0",
-              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.0/Slotbound-v1.4.0.ipa",
-              "size": 103102126,
+              "version": "1.4.1",
+              "date": "2026-11-24",
+              "publishedAt": "2026-11-24T09:09:31Z",
+              "buildVersion": "1.4.1",
+              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
+              "size": 103103326,
               "minOSVersion": "12.0",
-              "localizedDescription": "- 游戏文件跟随上游更新为 PC v1.0.3：暂停界面新增放弃按钮、任务重随等\n- 升级树手势（捏合缩放、拖动平移）跟随新版游戏文件重新适配\n\n\n移植版版本号与官方 PC 版的对照见 README。每个版本默认包含之前所有版本的改动。"
+              "localizedDescription": "- 修复长按士兵不出详细：v1.0.3 的 `tooltip:mousepressed(button=2)` 先被前置分支 `return true`，`pinHoveredUnit` 从未执行；垫片现在右键后自行钉住 `candidate.ref`\n- 修复石头/核心列表长按右键不能重掷：游戏那句 `stone.rerollAt` 排在 tooltip 之后永远轮不到，垫片在 `ui._stoneMode` 时补调\n- 修复战斗详细/结算明细列表拖不动：`battle/prep/spin` 阶段按落点是否在单位上区分拖兵与滚轮，非单位上的拖动转成滚轮派发\n- 长按触发时先悬停 90ms 再发右键，避免同一帧读到上一帧的 `candidate`"
             }
           ]
         }
