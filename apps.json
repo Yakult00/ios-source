@@ -166,22 +166,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "1.4.1",
-      "versionDate": "2026-11-24",
-      "versionDescription": "- 修复长按士兵不出详细\n- 修复石头/核心列表长按不能重掷\n- 修复战斗详细/结算明细列表拖不动",
-      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
-      "size": 103103326,
+      "version": "1.4.2",
+      "versionDate": "2026-11-25",
+      "versionDescription": "- 修复了长按吸收问题：保持长按，稍微滑动一下即可吸收\n- 添加存档保存到本地功能（导出 .sbsave，可从文件恢复）\n- 优化了面板前后端同步",
+      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.2/Slotbound-v1.4.2.ipa",
+      "size": 103104161,
       "minOSVersion": "12.0",
       "versions": [
         {
-          "version": "1.4.1",
-          "date": "2026-11-24",
-          "publishedAt": "2026-11-24T09:09:31Z",
-          "buildVersion": "1.4.1",
-          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
-          "size": 103103326,
+          "version": "1.4.2",
+          "date": "2026-11-25",
+          "publishedAt": "2026-11-25T03:21:12Z",
+          "buildVersion": "1.4.2",
+          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.2/Slotbound-v1.4.2.ipa",
+          "size": 103104161,
           "minOSVersion": "12.0",
-          "localizedDescription": "- 修复长按士兵不出详细\n- 修复石头/核心列表长按不能重掷\n- 修复战斗详细/结算明细列表拖不动"
+          "localizedDescription": "- 修复了长按吸收问题：保持长按，稍微滑动一下即可吸收\n- 添加存档保存到本地功能（导出 .sbsave，可从文件恢复）\n- 优化了面板前后端同步"
         }
       ],
       "releaseChannels": [
@@ -189,14 +189,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "1.4.1",
-              "date": "2026-11-24",
-              "publishedAt": "2026-11-24T09:09:31Z",
-              "buildVersion": "1.4.1",
-              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.1/Slotbound-v1.4.1.ipa",
-              "size": 103103326,
+              "version": "1.4.2",
+              "date": "2026-11-25",
+              "publishedAt": "2026-11-25T03:21:12Z",
+              "buildVersion": "1.4.2",
+              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.2/Slotbound-v1.4.2.ipa",
+              "size": 103104161,
               "minOSVersion": "12.0",
-              "localizedDescription": "- 修复长按士兵不出详细\n- 修复石头/核心列表长按不能重掷\n- 修复战斗详细/结算明细列表拖不动"
+              "localizedDescription": "- 修复了长按吸收问题：保持长按，稍微滑动一下即可吸收\n- 添加存档保存到本地功能（导出 .sbsave，可从文件恢复）\n- 优化了面板前后端同步"
             }
           ]
         }
