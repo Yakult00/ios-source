@@ -166,22 +166,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "1.4.2",
-      "versionDate": "2026-11-25",
-      "versionDescription": "- 修复了长按吸收问题：保持长按，稍微滑动一下即可吸收\n- 添加存档保存到本地功能（导出 .sbsave，可从文件恢复）\n- 优化了面板前后端同步",
-      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.2/Slotbound-v1.4.2.ipa",
-      "size": 103104161,
+      "version": "1.4.3",
+      "versionDate": "2026-11-26",
+      "versionDescription": "## 更新\n\n- 修复部分界面长按右键不生效的问题\n- 开局前 SLOT 界面长按核心槽改为直接切换核心，进入对局后长按道具/士兵恢复正常\n\n## 包说明\n\n| 文件 | 用途 |\n|---|---|\n| `Slotbound-v1.4.3.ipa` | 未签名原版包，LiveContainer / 重签工具安装 |\n| `Slotbound-v1.4.3-injected.ipa` | 已内置面板版：面板 dylib 放在 `Frameworks/`，`love` 主程序已加 `@executable_path/Frameworks/SlotboundTrainer.dylib` 加载项，重签后直接装，不用再挂 tweak |\n| `SlotboundTrainer-NoJIT.dylib` | 单独的面板 dylib，给用 tweak 注入方式的人 |\n\n校验：\n\n```\nSlotbound-v1.4.3.ipa           sha256 0468becdfe51b7ba1263fdfcef871b55b4d1177ad91fca5dac577f2118bfc30f\nSlotbound-v1.4.3-injected.ipa  sha256 4c2b9e4a2e569162cd57edebb63bff172ba1d1d3d75d26d346421aa723784eef\nSlotboundTrainer-NoJIT.dylib   sha256 33281ea59fe75bbcfe7457a29ac2d898e39dcfc469ba934d5079b666787bfe70\n```\n\n游戏内容与 v1.4.3 原版包完全一致（game.love 100,890,665 B，2079 个文件）。",
+      "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.3/Slotbound-v1.4.3-injected.ipa",
+      "size": 103180898,
       "minOSVersion": "12.0",
       "versions": [
         {
-          "version": "1.4.2",
-          "date": "2026-11-25",
-          "publishedAt": "2026-11-25T03:21:12Z",
-          "buildVersion": "1.4.2",
-          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.2/Slotbound-v1.4.2.ipa",
-          "size": 103104161,
+          "version": "1.4.3",
+          "date": "2026-11-26",
+          "publishedAt": "2026-11-26T00:20:55Z",
+          "buildVersion": "1.4.3",
+          "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.3/Slotbound-v1.4.3-injected.ipa",
+          "size": 103180898,
           "minOSVersion": "12.0",
-          "localizedDescription": "- 修复了长按吸收问题：保持长按，稍微滑动一下即可吸收\n- 添加存档保存到本地功能（导出 .sbsave，可从文件恢复）\n- 优化了面板前后端同步"
+          "localizedDescription": "## 更新\n\n- 修复部分界面长按右键不生效的问题\n- 开局前 SLOT 界面长按核心槽改为直接切换核心，进入对局后长按道具/士兵恢复正常\n\n## 包说明\n\n| 文件 | 用途 |\n|---|---|\n| `Slotbound-v1.4.3.ipa` | 未签名原版包，LiveContainer / 重签工具安装 |\n| `Slotbound-v1.4.3-injected.ipa` | 已内置面板版：面板 dylib 放在 `Frameworks/`，`love` 主程序已加 `@executable_path/Frameworks/SlotboundTrainer.dylib` 加载项，重签后直接装，不用再挂 tweak |\n| `SlotboundTrainer-NoJIT.dylib` | 单独的面板 dylib，给用 tweak 注入方式的人 |\n\n校验：\n\n```\nSlotbound-v1.4.3.ipa           sha256 0468becdfe51b7ba1263fdfcef871b55b4d1177ad91fca5dac577f2118bfc30f\nSlotbound-v1.4.3-injected.ipa  sha256 4c2b9e4a2e569162cd57edebb63bff172ba1d1d3d75d26d346421aa723784eef\nSlotboundTrainer-NoJIT.dylib   sha256 33281ea59fe75bbcfe7457a29ac2d898e39dcfc469ba934d5079b666787bfe70\n```\n\n游戏内容与 v1.4.3 原版包完全一致（game.love 100,890,665 B，2079 个文件）。"
         }
       ],
       "releaseChannels": [
@@ -189,14 +189,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "1.4.2",
-              "date": "2026-11-25",
-              "publishedAt": "2026-11-25T03:21:12Z",
-              "buildVersion": "1.4.2",
-              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.2/Slotbound-v1.4.2.ipa",
-              "size": 103104161,
+              "version": "1.4.3",
+              "date": "2026-11-26",
+              "publishedAt": "2026-11-26T00:20:55Z",
+              "buildVersion": "1.4.3",
+              "downloadURL": "https://github.com/Yakult00/Slotbound-iOS/releases/download/v1.4.3/Slotbound-v1.4.3-injected.ipa",
+              "size": 103180898,
               "minOSVersion": "12.0",
-              "localizedDescription": "- 修复了长按吸收问题：保持长按，稍微滑动一下即可吸收\n- 添加存档保存到本地功能（导出 .sbsave，可从文件恢复）\n- 优化了面板前后端同步"
+              "localizedDescription": "## 更新\n\n- 修复部分界面长按右键不生效的问题\n- 开局前 SLOT 界面长按核心槽改为直接切换核心，进入对局后长按道具/士兵恢复正常\n\n## 包说明\n\n| 文件 | 用途 |\n|---|---|\n| `Slotbound-v1.4.3.ipa` | 未签名原版包，LiveContainer / 重签工具安装 |\n| `Slotbound-v1.4.3-injected.ipa` | 已内置面板版：面板 dylib 放在 `Frameworks/`，`love` 主程序已加 `@executable_path/Frameworks/SlotboundTrainer.dylib` 加载项，重签后直接装，不用再挂 tweak |\n| `SlotboundTrainer-NoJIT.dylib` | 单独的面板 dylib，给用 tweak 注入方式的人 |\n\n校验：\n\n```\nSlotbound-v1.4.3.ipa           sha256 0468becdfe51b7ba1263fdfcef871b55b4d1177ad91fca5dac577f2118bfc30f\nSlotbound-v1.4.3-injected.ipa  sha256 4c2b9e4a2e569162cd57edebb63bff172ba1d1d3d75d26d346421aa723784eef\nSlotboundTrainer-NoJIT.dylib   sha256 33281ea59fe75bbcfe7457a29ac2d898e39dcfc469ba934d5079b666787bfe70\n```\n\n游戏内容与 v1.4.3 原版包完全一致（game.love 100,890,665 B，2079 个文件）。"
             }
           ]
         }
