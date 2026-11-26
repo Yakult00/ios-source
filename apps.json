@@ -166,22 +166,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "1.0",
-      "versionDate": "2026-11-25",
-      "versionDescription": "## Reloc v1.0.0\n\n面向 iOS 17.0+ 的外设级定位模拟工具，通过本机回环实现 iAP2 / MFi-v3 / NMEA 外设定位注入。\n\n### 主要特性\n- **定格定位**：地图点击选点、关键词搜索、手动输入 WGS-84 坐标、自动反地理编码、运行中浏览并热更新定位、停止二次确认恢复真实 GPS\n- **后台稳定保活**：导航级后台定位保活 + 非零次声音频双保险，支持自动引导升级「始终」定位权限、开关系统定位服务刷新缓存后自动重建后台断言与断线自动重连\n- **坐标与地图**：中国大陆地图 GCJ-02 ↔ WGS-84 自动双向纠偏、可选 ±0.6 m 自然 GPS 微幅漂移、标准 / 卫星 / 混合地图切换\n- **本机配对**：支持 `.rppairing` / `.mobiledevicepairing` 导入；iOS 27+ 支持本机直接配对与画中画（PiP）悬浮指引窗实时展示 6 位配对码\n- **收藏与实测**：收藏夹（重命名 / 删除）、最近 30 条使用记录、异常中断一键恢复，内置 `CoreLocation` 实时来源实测面板与协议日志\n\n### 安装说明\n- 附件 `Reloc.ipa` 为未签名 Release 构建产物，请使用个人证书或自签工具签名后安装。\n- 建议安装后在系统 **「设置 → 隐私与安全性 → 定位服务 → Reloc」** 将定位权限设为 **「始终」** 并开启「精确位置」，以保证切后台与在第三方应用中使用时持续稳定。",
-      "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.0/Reloc.ipa",
-      "size": 4500835,
+      "version": "1.0.1",
+      "versionDate": "2026-11-26",
+      "versionDescription": "## Reloc v1.0.1\n\n修复配对文件导入、地名解析与停止恢复定位问题，新增纯 WGS-84 国际地图可选项、极速自动触发与一键画中画（PiP）定位刷新闭环，并增加 iPad 不支持提示。\n\n### 本次更新\n\n- **修复配对文件无法选择**：改用原生 UIDocumentPickerViewController 副本导入模式，在 Info.plist 中声明 .rppairing / .mobiledevicepairing / .mobilepair 文档类型，解决文件置灰无法点选的问题，并支持「用 Reloc 打开」直接导入。\n- **多源地图与无高德选项**：保留 Apple 地图（系统默认），同时新增完全独立于 MKMapView 的纯原生 UIKit WGS-84 瓦片地图（全球街道图 Esri / OpenStreetMap / 全球卫星图），全部免 API Key、无高德地图字样与 GCJ-02 偏移。\n- **修复地名一直解析卡住**：新增 CLGeocoder（2 秒超时）→ OpenStreetMap Nominatim → BigDataCloud → 坐标兜底的四级联反地理编码，解决海外坐标长期卡在「正在解析地名…」的问题。\n- **极速触发与一键 PiP 刷新**：iAP2 鉴权成功后延迟拉起 CoreLocation + 自动脉冲订阅 0xFFFA + 初始高速锁定突发，首页实时显示外设生效状态；若系统沿用旧缓存，可一键启动画中画（PiP）悬浮 5 秒倒计时指引并直达系统「定位服务」（已修复未关定位误闪 5 秒与过渡卡顿）。\n- **修复停止定位后未恢复真实位置**：停止时先下发标准 NMEA 失效报文（GPGGA quality=0 / GPRMC status=V）与 iAP2 RST 链路复位包，随后自动唤醒本机真实 GPS 覆盖缓存，室内弱信号时同样提供一键刷新恢复入口。\n- **新增 iPad 设备检测**：因 iPadOS 不提供 CarPlay / com.apple.carkit.service 外设通道，在 iPad 上启动时将直接提示设备不可用（仅支持 iPhone）。\n\n### 安装说明\n\n- 附件 Reloc.ipa 为未签名 Release 构建产物，请使用个人证书或自签工具签名后安装（仅支持 iPhone）。\n- 建议安装后在系统「设置 → 隐私与安全性 → 定位服务 → Reloc」将定位权限设为「始终」并开启「精确位置」。",
+      "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.1/Reloc.ipa",
+      "size": 4441557,
       "minOSVersion": "17.0",
       "versions": [
         {
-          "version": "1.0",
-          "date": "2026-11-25",
-          "publishedAt": "2026-11-25T18:52:38Z",
-          "buildVersion": "1",
-          "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.0/Reloc.ipa",
-          "size": 4500835,
+          "version": "1.0.1",
+          "date": "2026-11-26",
+          "publishedAt": "2026-11-26T11:35:53Z",
+          "buildVersion": "2",
+          "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.1/Reloc.ipa",
+          "size": 4441557,
           "minOSVersion": "17.0",
-          "localizedDescription": "## Reloc v1.0.0\n\n面向 iOS 17.0+ 的外设级定位模拟工具，通过本机回环实现 iAP2 / MFi-v3 / NMEA 外设定位注入。\n\n### 主要特性\n- **定格定位**：地图点击选点、关键词搜索、手动输入 WGS-84 坐标、自动反地理编码、运行中浏览并热更新定位、停止二次确认恢复真实 GPS\n- **后台稳定保活**：导航级后台定位保活 + 非零次声音频双保险，支持自动引导升级「始终」定位权限、开关系统定位服务刷新缓存后自动重建后台断言与断线自动重连\n- **坐标与地图**：中国大陆地图 GCJ-02 ↔ WGS-84 自动双向纠偏、可选 ±0.6 m 自然 GPS 微幅漂移、标准 / 卫星 / 混合地图切换\n- **本机配对**：支持 `.rppairing` / `.mobiledevicepairing` 导入；iOS 27+ 支持本机直接配对与画中画（PiP）悬浮指引窗实时展示 6 位配对码\n- **收藏与实测**：收藏夹（重命名 / 删除）、最近 30 条使用记录、异常中断一键恢复，内置 `CoreLocation` 实时来源实测面板与协议日志\n\n### 安装说明\n- 附件 `Reloc.ipa` 为未签名 Release 构建产物，请使用个人证书或自签工具签名后安装。\n- 建议安装后在系统 **「设置 → 隐私与安全性 → 定位服务 → Reloc」** 将定位权限设为 **「始终」** 并开启「精确位置」，以保证切后台与在第三方应用中使用时持续稳定。"
+          "localizedDescription": "## Reloc v1.0.1\n\n修复配对文件导入、地名解析与停止恢复定位问题，新增纯 WGS-84 国际地图可选项、极速自动触发与一键画中画（PiP）定位刷新闭环，并增加 iPad 不支持提示。\n\n### 本次更新\n\n- **修复配对文件无法选择**：改用原生 UIDocumentPickerViewController 副本导入模式，在 Info.plist 中声明 .rppairing / .mobiledevicepairing / .mobilepair 文档类型，解决文件置灰无法点选的问题，并支持「用 Reloc 打开」直接导入。\n- **多源地图与无高德选项**：保留 Apple 地图（系统默认），同时新增完全独立于 MKMapView 的纯原生 UIKit WGS-84 瓦片地图（全球街道图 Esri / OpenStreetMap / 全球卫星图），全部免 API Key、无高德地图字样与 GCJ-02 偏移。\n- **修复地名一直解析卡住**：新增 CLGeocoder（2 秒超时）→ OpenStreetMap Nominatim → BigDataCloud → 坐标兜底的四级联反地理编码，解决海外坐标长期卡在「正在解析地名…」的问题。\n- **极速触发与一键 PiP 刷新**：iAP2 鉴权成功后延迟拉起 CoreLocation + 自动脉冲订阅 0xFFFA + 初始高速锁定突发，首页实时显示外设生效状态；若系统沿用旧缓存，可一键启动画中画（PiP）悬浮 5 秒倒计时指引并直达系统「定位服务」（已修复未关定位误闪 5 秒与过渡卡顿）。\n- **修复停止定位后未恢复真实位置**：停止时先下发标准 NMEA 失效报文（GPGGA quality=0 / GPRMC status=V）与 iAP2 RST 链路复位包，随后自动唤醒本机真实 GPS 覆盖缓存，室内弱信号时同样提供一键刷新恢复入口。\n- **新增 iPad 设备检测**：因 iPadOS 不提供 CarPlay / com.apple.carkit.service 外设通道，在 iPad 上启动时将直接提示设备不可用（仅支持 iPhone）。\n\n### 安装说明\n\n- 附件 Reloc.ipa 为未签名 Release 构建产物，请使用个人证书或自签工具签名后安装（仅支持 iPhone）。\n- 建议安装后在系统「设置 → 隐私与安全性 → 定位服务 → Reloc」将定位权限设为「始终」并开启「精确位置」。"
         }
       ],
       "releaseChannels": [
@@ -189,14 +189,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "1.0",
-              "date": "2026-11-25",
-              "publishedAt": "2026-11-25T18:52:38Z",
-              "buildVersion": "1",
-              "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.0/Reloc.ipa",
-              "size": 4500835,
+              "version": "1.0.1",
+              "date": "2026-11-26",
+              "publishedAt": "2026-11-26T11:35:53Z",
+              "buildVersion": "2",
+              "downloadURL": "https://github.com/Reukix/Reloc/releases/download/v1.0.1/Reloc.ipa",
+              "size": 4441557,
               "minOSVersion": "17.0",
-              "localizedDescription": "## Reloc v1.0.0\n\n面向 iOS 17.0+ 的外设级定位模拟工具，通过本机回环实现 iAP2 / MFi-v3 / NMEA 外设定位注入。\n\n### 主要特性\n- **定格定位**：地图点击选点、关键词搜索、手动输入 WGS-84 坐标、自动反地理编码、运行中浏览并热更新定位、停止二次确认恢复真实 GPS\n- **后台稳定保活**：导航级后台定位保活 + 非零次声音频双保险，支持自动引导升级「始终」定位权限、开关系统定位服务刷新缓存后自动重建后台断言与断线自动重连\n- **坐标与地图**：中国大陆地图 GCJ-02 ↔ WGS-84 自动双向纠偏、可选 ±0.6 m 自然 GPS 微幅漂移、标准 / 卫星 / 混合地图切换\n- **本机配对**：支持 `.rppairing` / `.mobiledevicepairing` 导入；iOS 27+ 支持本机直接配对与画中画（PiP）悬浮指引窗实时展示 6 位配对码\n- **收藏与实测**：收藏夹（重命名 / 删除）、最近 30 条使用记录、异常中断一键恢复，内置 `CoreLocation` 实时来源实测面板与协议日志\n\n### 安装说明\n- 附件 `Reloc.ipa` 为未签名 Release 构建产物，请使用个人证书或自签工具签名后安装。\n- 建议安装后在系统 **「设置 → 隐私与安全性 → 定位服务 → Reloc」** 将定位权限设为 **「始终」** 并开启「精确位置」，以保证切后台与在第三方应用中使用时持续稳定。"
+              "localizedDescription": "## Reloc v1.0.1\n\n修复配对文件导入、地名解析与停止恢复定位问题，新增纯 WGS-84 国际地图可选项、极速自动触发与一键画中画（PiP）定位刷新闭环，并增加 iPad 不支持提示。\n\n### 本次更新\n\n- **修复配对文件无法选择**：改用原生 UIDocumentPickerViewController 副本导入模式，在 Info.plist 中声明 .rppairing / .mobiledevicepairing / .mobilepair 文档类型，解决文件置灰无法点选的问题，并支持「用 Reloc 打开」直接导入。\n- **多源地图与无高德选项**：保留 Apple 地图（系统默认），同时新增完全独立于 MKMapView 的纯原生 UIKit WGS-84 瓦片地图（全球街道图 Esri / OpenStreetMap / 全球卫星图），全部免 API Key、无高德地图字样与 GCJ-02 偏移。\n- **修复地名一直解析卡住**：新增 CLGeocoder（2 秒超时）→ OpenStreetMap Nominatim → BigDataCloud → 坐标兜底的四级联反地理编码，解决海外坐标长期卡在「正在解析地名…」的问题。\n- **极速触发与一键 PiP 刷新**：iAP2 鉴权成功后延迟拉起 CoreLocation + 自动脉冲订阅 0xFFFA + 初始高速锁定突发，首页实时显示外设生效状态；若系统沿用旧缓存，可一键启动画中画（PiP）悬浮 5 秒倒计时指引并直达系统「定位服务」（已修复未关定位误闪 5 秒与过渡卡顿）。\n- **修复停止定位后未恢复真实位置**：停止时先下发标准 NMEA 失效报文（GPGGA quality=0 / GPRMC status=V）与 iAP2 RST 链路复位包，随后自动唤醒本机真实 GPS 覆盖缓存，室内弱信号时同样提供一键刷新恢复入口。\n- **新增 iPad 设备检测**：因 iPadOS 不提供 CarPlay / com.apple.carkit.service 外设通道，在 iPad 上启动时将直接提示设备不可用（仅支持 iPhone）。\n\n### 安装说明\n\n- 附件 Reloc.ipa 为未签名 Release 构建产物，请使用个人证书或自签工具签名后安装（仅支持 iPhone）。\n- 建议安装后在系统「设置 → 隐私与安全性 → 定位服务 → Reloc」将定位权限设为「始终」并开启「精确位置」。"
             }
           ]
         }
@@ -264,22 +264,22 @@
         "entitlements": [],
         "privacy": {}
       },
-      "version": "0.9.20",
-      "versionDate": "2026-11-21",
-      "versionDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.20\n\nApps Manager backups, and safer handling of databases that are in use.\n\n## New\n\n- **Import Apps Manager backups** ([#19](https://github.com/kolbicz/WQFiles/issues/19)): **Apps** → tap the app → **Import as Backup…** now accepts `.adbk` files from Apps Manager. The app's data is saved as a normal WQ Files backup, ready to restore.\n  - Only the app's own data folder is imported. App Group data in the file isn't, because WQ Files backups don't include App Groups. The keychain items Apps Manager saves are encrypted, so they can't be imported either. When you import, WQ Files lists what it left out.\n  - If the file says it belongs to a different app than the one you tapped, WQ Files asks first, as with any other import.\n  - Opening an `.adbk` from the Files app or the share sheet doesn't start an import; start it from Apps.\n\n## Fixed\n\n- **Files another app is using:** deleting or replacing them, for example an app's database in its App Group while the app runs, failed with \"Resource temporarily unavailable (errno 35)\". WQ Files now says another app is using the file and that quitting that app and trying again should work. Its extensions or widgets can keep the file open even after you quit it.\n- **Databases in use stay intact:** an app's database comes with `-wal` and `-shm` files next to it, and while the app runs, iOS doesn't lock the `-wal` file. WQ Files could delete or replace it while refusing the database file, which lost the app's newest data. Now a database and its `-wal`, `-shm` and `-journ",
-      "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.20/WQFiles.ipa",
-      "size": 2199929,
+      "version": "0.9.30",
+      "versionDate": "2026-11-26",
+      "versionDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.30\n\nShortcuts actions, and a round of fixes after a full review of the code: safer restores and imports, fewer hangs, and faster lists.\n\n## New\n\n- **Shortcuts actions:** WQ Files now adds actions to the Shortcuts app, for shortcuts and automations.\n  - **Files:** List Folder, Get File, Save File, Copy, Move, Rename, New Folder and Delete. They take full paths and work in any app's container, like the file browser.\n  - **Apps:** Clean App Caches and Back Up App Data, by bundle identifier. Clean App Caches also takes the identifier of an app extension, as the Cache Cleaner lists them.\n  - List Folder and Get File always work. Everything that changes files needs **Settings → Allow Shortcuts to Change Files**, which is off until you turn it on. Deleting and cleaning also need **Allow Deleting**.\n  - The actions follow the app's rules: deleted files go to Recently Deleted, a replaced file is kept in Backups, and nothing is replaced by accident: Copy and Save File give \"Name 2\" for a name that is taken, and Move, Rename and New Folder refuse it.\n  - An action that had to wait more than 20 seconds because WQ Files was busy is not run, so nothing is changed after Shortcuts has reported a failure.\n  - Most action names and descriptions in the Shortcuts app are in English for now.\n  - See [Shortcuts](https://github.com/kolbicz/WQFiles#shortcuts) in the README.\n- **Cache Cleaner:** the long-press menu of an app has **Copy Bundle ID**, handy for the Shortcuts actions.\n\n## Fixed\n\n### Files and folders\n\n- **Sort ",
+      "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.30/WQFiles.ipa",
+      "size": 2268148,
       "minOSVersion": "26.0",
       "versions": [
         {
-          "version": "0.9.20",
-          "date": "2026-11-21",
-          "publishedAt": "2026-11-21T21:41:37Z",
-          "buildVersion": "114",
-          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.20/WQFiles.ipa",
-          "size": 2199929,
+          "version": "0.9.30",
+          "date": "2026-11-26",
+          "publishedAt": "2026-11-26T11:23:07Z",
+          "buildVersion": "115",
+          "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.30/WQFiles.ipa",
+          "size": 2268148,
           "minOSVersion": "26.0",
-          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.20\n\nApps Manager backups, and safer handling of databases that are in use.\n\n## New\n\n- **Import Apps Manager backups** ([#19](https://github.com/kolbicz/WQFiles/issues/19)): **Apps** → tap the app → **Import as Backup…** now accepts `.adbk` files from Apps Manager. The app's data is saved as a normal WQ Files backup, ready to restore.\n  - Only the app's own data folder is imported. App Group data in the file isn't, because WQ Files backups don't include App Groups. The keychain items Apps Manager saves are encrypted, so they can't be imported either. When you import, WQ Files lists what it left out.\n  - If the file says it belongs to a different app than the one you tapped, WQ Files asks first, as with any other import.\n  - Opening an `.adbk` from the Files app or the share sheet doesn't start an import; start it from Apps.\n\n## Fixed\n\n- **Files another app is using:** deleting or replacing them, for example an app's database in its App Group while the app runs, failed with \"Resource temporarily unavailable (errno 35)\". WQ Files now says another app is using the file and that quitting that app and trying again should work. Its extensions or widgets can keep the file open even after you quit it.\n- **Databases in use stay intact:** an app's database comes with `-wal` and `-shm` files next to it, and while the app runs, iOS doesn't lock the `-wal` file. WQ Files could delete or replace it while refusing the database file, which lost the app's newest data. Now a database and its `-wal`, `-shm` and `-journ"
+          "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.30\n\nShortcuts actions, and a round of fixes after a full review of the code: safer restores and imports, fewer hangs, and faster lists.\n\n## New\n\n- **Shortcuts actions:** WQ Files now adds actions to the Shortcuts app, for shortcuts and automations.\n  - **Files:** List Folder, Get File, Save File, Copy, Move, Rename, New Folder and Delete. They take full paths and work in any app's container, like the file browser.\n  - **Apps:** Clean App Caches and Back Up App Data, by bundle identifier. Clean App Caches also takes the identifier of an app extension, as the Cache Cleaner lists them.\n  - List Folder and Get File always work. Everything that changes files needs **Settings → Allow Shortcuts to Change Files**, which is off until you turn it on. Deleting and cleaning also need **Allow Deleting**.\n  - The actions follow the app's rules: deleted files go to Recently Deleted, a replaced file is kept in Backups, and nothing is replaced by accident: Copy and Save File give \"Name 2\" for a name that is taken, and Move, Rename and New Folder refuse it.\n  - An action that had to wait more than 20 seconds because WQ Files was busy is not run, so nothing is changed after Shortcuts has reported a failure.\n  - Most action names and descriptions in the Shortcuts app are in English for now.\n  - See [Shortcuts](https://github.com/kolbicz/WQFiles#shortcuts) in the README.\n- **Cache Cleaner:** the long-press menu of an app has **Copy Bundle ID**, handy for the Shortcuts actions.\n\n## Fixed\n\n### Files and folders\n\n- **Sort "
         }
       ],
       "releaseChannels": [
@@ -287,14 +287,14 @@
           "track": "stable",
           "releases": [
             {
-              "version": "0.9.20",
-              "date": "2026-11-21",
-              "publishedAt": "2026-11-21T21:41:37Z",
-              "buildVersion": "114",
-              "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.20/WQFiles.ipa",
-              "size": 2199929,
+              "version": "0.9.30",
+              "date": "2026-11-26",
+              "publishedAt": "2026-11-26T11:23:07Z",
+              "buildVersion": "115",
+              "downloadURL": "https://github.com/kolbicz/WQFiles/releases/download/v0.9.30/WQFiles.ipa",
+              "size": 2268148,
               "minOSVersion": "26.0",
-              "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.20\n\nApps Manager backups, and safer handling of databases that are in use.\n\n## New\n\n- **Import Apps Manager backups** ([#19](https://github.com/kolbicz/WQFiles/issues/19)): **Apps** → tap the app → **Import as Backup…** now accepts `.adbk` files from Apps Manager. The app's data is saved as a normal WQ Files backup, ready to restore.\n  - Only the app's own data folder is imported. App Group data in the file isn't, because WQ Files backups don't include App Groups. The keychain items Apps Manager saves are encrypted, so they can't be imported either. When you import, WQ Files lists what it left out.\n  - If the file says it belongs to a different app than the one you tapped, WQ Files asks first, as with any other import.\n  - Opening an `.adbk` from the Files app or the share sheet doesn't start an import; start it from Apps.\n\n## Fixed\n\n- **Files another app is using:** deleting or replacing them, for example an app's database in its App Group while the app runs, failed with \"Resource temporarily unavailable (errno 35)\". WQ Files now says another app is using the file and that quitting that app and trying again should work. Its extensions or widgets can keep the file open even after you quit it.\n- **Databases in use stay intact:** an app's database comes with `-wal` and `-shm` files next to it, and while the app runs, iOS doesn't lock the `-wal` file. WQ Files could delete or replace it while refusing the database file, which lost the app's newest data. Now a database and its `-wal`, `-shm` and `-journ"
+              "localizedDescription": "> **Requires:** iOS 26.0 – 26.7.2, or iOS 27.0 up to 27.3 beta 1. **Not supported:** iOS 27.3 beta 2 and later, where Apple patched worse_query. Tested on iOS 27.0.1, 27.2.1, 27.3 beta 1 (confirmed by a user) and 26.7.1; see [Tested devices](https://github.com/kolbicz/WQFiles#tested-devices).\n> **Needs:** a sideloading tool that keeps the App Group entitlement; see [Signing](https://github.com/kolbicz/WQFiles#signing-the-app-group) in the README.\n\n# Worse Query Files 0.9.30\n\nShortcuts actions, and a round of fixes after a full review of the code: safer restores and imports, fewer hangs, and faster lists.\n\n## New\n\n- **Shortcuts actions:** WQ Files now adds actions to the Shortcuts app, for shortcuts and automations.\n  - **Files:** List Folder, Get File, Save File, Copy, Move, Rename, New Folder and Delete. They take full paths and work in any app's container, like the file browser.\n  - **Apps:** Clean App Caches and Back Up App Data, by bundle identifier. Clean App Caches also takes the identifier of an app extension, as the Cache Cleaner lists them.\n  - List Folder and Get File always work. Everything that changes files needs **Settings → Allow Shortcuts to Change Files**, which is off until you turn it on. Deleting and cleaning also need **Allow Deleting**.\n  - The actions follow the app's rules: deleted files go to Recently Deleted, a replaced file is kept in Backups, and nothing is replaced by accident: Copy and Save File give \"Name 2\" for a name that is taken, and Move, Rename and New Folder refuse it.\n  - An action that had to wait more than 20 seconds because WQ Files was busy is not run, so nothing is changed after Shortcuts has reported a failure.\n  - Most action names and descriptions in the Shortcuts app are in English for now.\n  - See [Shortcuts](https://github.com/kolbicz/WQFiles#shortcuts) in the README.\n- **Cache Cleaner:** the long-press menu of an app has **Copy Bundle ID**, handy for the Shortcuts actions.\n\n## Fixed\n\n### Files and folders\n\n- **Sort "
             }
           ]
         }
